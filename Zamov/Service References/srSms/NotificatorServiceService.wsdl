@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://ws.mobisoftline.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NotificatorServiceService" targetNamespace="http://ws.mobisoftline.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://mobisoftline.com.ua:80/WSI/NotificatorServicePort?xsd=1" namespace="http://ws.mobisoftline.com/" />
+    </xsd:schema>
+  </types>
+  <message name="sendMessages">
+    <part name="parameters" element="tns:sendMessages" />
+  </message>
+  <message name="sendMessagesResponse">
+    <part name="parameters" element="tns:sendMessagesResponse" />
+  </message>
+  <message name="requestNotificationStatus">
+    <part name="parameters" element="tns:requestNotificationStatus" />
+  </message>
+  <message name="requestNotificationStatusResponse">
+    <part name="parameters" element="tns:requestNotificationStatusResponse" />
+  </message>
+  <message name="requestMessageStatus">
+    <part name="parameters" element="tns:requestMessageStatus" />
+  </message>
+  <message name="requestMessageStatusResponse">
+    <part name="parameters" element="tns:requestMessageStatusResponse" />
+  </message>
+  <portType name="NotificatorServiceDelegate">
+    <operation name="sendMessages">
+      <input message="tns:sendMessages" />
+      <output message="tns:sendMessagesResponse" />
+    </operation>
+    <operation name="requestNotificationStatus">
+      <input message="tns:requestNotificationStatus" />
+      <output message="tns:requestNotificationStatusResponse" />
+    </operation>
+    <operation name="requestMessageStatus">
+      <input message="tns:requestMessageStatus" />
+      <output message="tns:requestMessageStatusResponse" />
+    </operation>
+  </portType>
+  <binding name="NotificatorServicePortBinding" type="tns:NotificatorServiceDelegate">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sendMessages">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestNotificationStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestMessageStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="NotificatorServiceService">
+    <port name="NotificatorServicePort" binding="tns:NotificatorServicePortBinding">
+      <soap:address location="http://mobisoftline.com.ua:80/WSI/NotificatorServicePort" />
+    </port>
+  </service>
+</definitions>

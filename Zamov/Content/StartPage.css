@@ -1,0 +1,58 @@
+﻿img{border:none;}
+
+div.mainCategory
+{
+float: left;
+width: 171px;
+height: 215px;
+background: transparent url(img/categoryBg.gif) 0px 10px no-repeat;
+padding-right:40px;
+padding-bottom:40px;
+text-align:center;
+padding-left:13px;
+}
+
+div.mainCategory.long
+{
+background: transparent url(img/categoryLongBg.jpg) no-repeat !important;
+}
+
+div.mainCategory.single{background: transparent url(img/categoryBgSingle.gif) 0px 10px no-repeat !important;}
+
+div.mainCategory.single.long
+{
+background: transparent url(img/categoryLongBgSingle.jpg) no-repeat !important;
+}
+
+.categoryButton
+{
+padding-top:12px;
+white-space:nowrap;
+color:White; 
+font-size:11px;
+height:20px;
+padding:12px 30px 2px;
+}
+
+div.mainCategory.long .categoryButton
+{
+padding:5px 30px;
+white-space:normal;
+height:30px;
+}
+
+.categoryButton a{color:White; text-decoration:none;}
+.categoryButton a:hover{text-decoration:underline;}
+
+.categoryImage{padding-top:10px;}
+
+.subCategories
+{
+text-align:left;
+padding-top:20px;
+padding-left:25px; 
+}
+
+.subCategories a{color:#687177;}
+
+.menuItem.selected a{font-weight:bold;}

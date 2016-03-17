@@ -1,0 +1,60 @@
+﻿.menuItem a{ font-weight:normal;}
+.subMenuItem a{color:#324d62; text-decoration:none;}
+.subMenuItem{padding-bottom:4px !important;}
+li ul li .subMenuItem a{color:Highlight; text-decoration:underline;}
+
+.active 
+{
+    font-weight: bold;
+    color: #324D62;
+    text-decoration: none;
+}
+/*.active{color:#2842e2 !important;}*/
+
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.treeview ul {
+	margin-top: 0px;
+}
+
+.treeview .hitarea {
+	background: url(img/treeArrows.jpg) 0px -5px no-repeat;
+	margin-top:10px;
+	height: 5px;
+	width: 5px;
+	margin-left: -5px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+}
+
+.treeview a.selected {
+	background-color: #eee;
+}
+
+#treecontrol { margin: 1em 0; display: none; }
+
+.treeview .hover { color: red; cursor: pointer; }
+
+.treeview li { background: none; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+
+.treeview .expandable-hitarea { background-position: 0 0 !important; }
+
+.treeview .collapsable-hitarea { background-position: 0 100% !important; }
+
+.treeview li.last { background-position: 0 -1766px }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: none; }  

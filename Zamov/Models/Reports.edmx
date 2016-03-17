@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="gb_zamovModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="gb_zamovModelStoreContainer">
+          <EntitySet Name="SalesReport" EntityType="gb_zamovModel.Store.SalesReport" store:Type="Views" store:Schema="dbo" store:Name="SalesReport">
+            <DefiningQuery>
+                SELECT
+                [SalesReport].[DealerId] AS [DealerId],
+                [SalesReport].[DealerName] AS [DealerName],
+                [SalesReport].[OrderId] AS [OrderId],
+                [SalesReport].[TotalPrice] AS [TotalPrice],
+                [SalesReport].[OrderDate] AS [OrderDate],
+                [SalesReport].[DeliveryDate] AS [DeliveryDate],
+                [SalesReport].[UserName] AS [UserName],
+                [SalesReport].[ClientName] AS [ClientName],
+                [SalesReport].[City] AS [City],
+                [SalesReport].[Address] AS [Address],
+                [SalesReport].[Phone] AS [Phone],
+                [SalesReport].[Email] AS [Email],
+                [SalesReport].[Status] AS [Status],
+                [SalesReport].[DiscountCardNumber] AS [DiscountCardNumber],
+                [SalesReport].[Comments] AS [Comments]
+                FROM [dbo].[SalesReport] AS [SalesReport]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view '1gb_zamov.dbo.SalesReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SalesReport">
+          <Key>
+            <PropertyRef Name="OrderId"/>
+          </Key>
+          <Property Name="DealerId" Type="int" />
+          <Property Name="DealerName" Type="nvarchar(max)" />
+          <Property Name="OrderId" Type="int" Nullable="false"/>
+          <Property Name="TotalPrice" Type="money" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="DeliveryDate" Type="datetime" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Status" Type="int" />
+          <Property Name="DiscountCardNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseEntities" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="Reports">
+          <EntitySet Name="SalesReport" EntityType="BaseEntities.SalesReportItem" />
+        </EntityContainer>
+        <EntityType Name="SalesReportItem">
+          <Key>
+            <PropertyRef Name="OrderId" /></Key>
+          <Property Name="DealerId" Type="Int32" />
+          <Property Name="DealerName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OrderDate" Type="DateTime" />
+          <Property Name="DeliveryDate" Type="DateTime" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ClientName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="DiscountCardNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Comments" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="gb_zamovModelStoreContainer" CdmEntityContainer="Reports">
+          <EntitySetMapping Name="SalesReport">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.SalesReportItem)">
+              <MappingFragment StoreEntitySet="SalesReport">
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" />
+                <ScalarProperty Name="DealerName" ColumnName="DealerName" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DiscountCardNumber" ColumnName="DiscountCardNumber" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Reports">
+        <EntityTypeShape EntityType="BaseEntities.SalesReport" Width="1.5" PointX="0.75" PointY="0.75" Height="3.0714322916666665" IsExpanded="true" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

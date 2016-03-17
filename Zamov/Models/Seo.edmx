@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BaseEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="BaseEntitiesStoreContainer">
+          <EntitySet Name="Seo" EntityType="BaseEntities.Store.Seo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SeoAdditional" EntityType="BaseEntities.Store.SeoAdditional" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SeoDictionary" EntityType="BaseEntities.Store.SeoDictionary" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Seo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="Url" Type="nvarchar" Nullable="false" />
+          <Property Name="Keywords" Type="nvarchar" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="SeoAdditional">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="IdEntity" Type="int" Nullable="false" />
+          <Property Name="TypeEntity" Type="int" Nullable="false" />
+          <Property Name="Keywords" Type="nvarchar" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="Title" Type="nvarchar" />
+          <Property Name="MetaTags" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="SeoDictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="char" Nullable="false" MaxLength="5" />
+          <Property Name="SeoKey" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SeoValue" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseEntities" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="SeoStorage">
+          <EntitySet Name="Seo" EntityType="BaseEntities.Seo" />
+          <EntitySet Name="SeoAdditional" EntityType="BaseEntities.SeoAdditional" />
+          <EntitySet Name="SeoDictionary" EntityType="BaseEntities.SeoDictionary" />
+        </EntityContainer>
+        <EntityType Name="Seo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Keywords" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" Nullable="true" /></EntityType>
+        <EntityType Name="SeoAdditional">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Language" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="IdEntity" Nullable="false" />
+          <Property Type="Int32" Name="TypeEntity" Nullable="false" />
+          <Property Type="String" Name="Keywords" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MetaTags" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SeoDictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Language" Nullable="false" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="SeoKey" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SeoValue" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="BaseEntitiesStoreContainer" CdmEntityContainer="SeoStorage">
+          <EntitySetMapping Name="Seo">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Seo)">
+              <MappingFragment StoreEntitySet="Seo">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeoAdditional">
+            <EntityTypeMapping TypeName="BaseEntities.SeoAdditional">
+              <MappingFragment StoreEntitySet="SeoAdditional">
+                <ScalarProperty Name="MetaTags" ColumnName="MetaTags" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="TypeEntity" ColumnName="TypeEntity" />
+                <ScalarProperty Name="IdEntity" ColumnName="IdEntity" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeoDictionary">
+            <EntityTypeMapping TypeName="BaseEntities.SeoDictionary">
+              <MappingFragment StoreEntitySet="SeoDictionary">
+                <ScalarProperty Name="SeoValue" ColumnName="SeoValue" />
+                <ScalarProperty Name="SeoKey" ColumnName="SeoKey" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Seo">
+        <EntityTypeShape EntityType="BaseEntities.Seo" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7566536458333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.SeoAdditional" Width="1.5" PointX="2.875" PointY="0.625" Height="2.5571907552083326" />
+        <EntityTypeShape EntityType="BaseEntities.SeoDictionary" Width="1.5" PointX="4.875" PointY="1" Height="1.7879850260416674" />
+        </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

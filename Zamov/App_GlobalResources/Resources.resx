@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountInfo" xml:space="preserve">
+    <value>Параметри доступу</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="Advertisement" xml:space="preserve">
+    <value>Реклама</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Категорiя</value>
+  </data>
+  <data name="Cities" xml:space="preserve">
+    <value>Micта</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Мiсто</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="CreateDealer" xml:space="preserve">
+    <value>Створення продавця</value>
+  </data>
+  <data name="Dealers" xml:space="preserve">
+    <value>Оберіть продавця</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Вилучити</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Опис</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Редагувати</value>
+  </data>
+  <data name="EditDealer" xml:space="preserve">
+    <value>Редагування продавця</value>
+  </data>
+  <data name="LoginHeader" xml:space="preserve">
+    <value>Будьласка, введiть iм'я користувача та пароль</value>
+  </data>
+  <data name="LoginUnsucsessful" xml:space="preserve">
+    <value>Спроба входу була невдалою</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Вхiд</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>Новини</value>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Вимкнути</value>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Ввiмкнути</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Запам'ятати мене</value>
+  </data>
+  <data name="Rus" xml:space="preserve">
+    <value>рус</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="Ukr" xml:space="preserve">
+    <value>укр</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Iм'я користувача</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Категорії</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Вiдмiна</value>
+  </data>
+  <data name="AreYouSure" xml:space="preserve">
+    <value>Ви впевненi</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Створити категорiю</value>
+  </data>
+  <data name="AddSubCategory" xml:space="preserve">
+    <value>Створити пiдкатегорiю</value>
+  </data>
+  <data name="AccountInformation" xml:space="preserve">
+    <value>Дані коричтувача</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Реєстрація</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Підтвердження паролю</value>
+  </data>
+  <data name="Dealer" xml:space="preserve">
+    <value>Продавець</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Електронна пошта</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Ім'я</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Прізвище</value>
+  </data>
+  <data name="Manager" xml:space="preserve">
+    <value>Менеджер</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Телефон</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Користувачі</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Групи товарiв</value>
+  </data>
+  <data name="ActiveF" xml:space="preserve">
+    <value>Активна</value>
+  </data>
+  <data name="AddGroup" xml:space="preserve">
+    <value>Створити групу</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Логін</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Адміністрування</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Вихід</value>
+  </data>
+  <data name="PersonalCabinet" xml:space="preserve">
+    <value>Власний кабінет</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Замовлення</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Товари</value>
+  </data>
+  <data name="AddSubGroup" xml:space="preserve">
+    <value>Створити пiдгрупу</value>
+  </data>
+  <data name="ManageGroups" xml:space="preserve">
+    <value>Керування групами</value>
+  </data>
+  <data name="SelectGroup" xml:space="preserve">
+    <value>Оберiть групу</value>
+  </data>
+  <data name="DeleteCategoryConfirmation" xml:space="preserve">
+    <value>Увага! Будуть видалені всі підкатегорії а також прив`язки до постачальників. Ви впевнені що хочете видалити цю категорію?</value>
+  </data>
+  <data name="PartNumber" xml:space="preserve">
+    <value>Код товару</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Цiна</value>
+  </data>
+  <data name="ActiveM" xml:space="preserve">
+    <value>Активний</value>
+  </data>
+  <data name="ImportProducts" xml:space="preserve">
+    <value>Імпортувати товари з Excel</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Завантажити</value>
+  </data>
+  <data name="NewProducts" xml:space="preserve">
+    <value>Новi товари</value>
+  </data>
+  <data name="UpdatedProducts" xml:space="preserve">
+    <value>Товари, що змiнилися</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="Show" xml:space="preserve">
+    <value>Показувати</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Вперед</value>
+  </data>
+  <data name="SelectCategory" xml:space="preserve">
+    <value>Оберіть категорію</value>
+  </data>
+  <data name="SubCategories" xml:space="preserve">
+    <value>Підкатегорії</value>
+  </data>
+  <data name="MeassureUnit" xml:space="preserve">
+    <value>Одиниця вимiру</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Кiлькiсть</value>
+  </data>
+  <data name="ToOrder" xml:space="preserve">
+    <value>Замовити</value>
+  </data>
+  <data name="AddToCart" xml:space="preserve">
+    <value>Додати до кошику</value>
+  </data>
+  <data name="AcceptOrder" xml:space="preserve">
+    <value>Прийняти замовлення</value>
+  </data>
+  <data name="CancelOrder" xml:space="preserve">
+    <value>Скасувати замовлення</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Клієнт</value>
+  </data>
+  <data name="DeliveryAddress" xml:space="preserve">
+    <value>Адреса доставки</value>
+  </data>
+  <data name="OfOrder" xml:space="preserve">
+    <value>Замовлення</value>
+  </data>
+  <data name="OrderDeliveryDateTime" xml:space="preserve">
+    <value>Дата та час доставки</value>
+  </data>
+  <data name="OrderInfo" xml:space="preserve">
+    <value>Інформація про адресу доставки та клієнта</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Найменування</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Перегляд</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="Cost" xml:space="preserve">
+    <value>Вартість</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Одиниця вимірювання</value>
+  </data>
+  <data name="PickAnotherDealer" xml:space="preserve">
+    <value>Обрати іншого продавця</value>
+  </data>
+  <data name="CartName" xml:space="preserve">
+    <value>Назва кошика</value>
+  </data>
+  <data name="OrderStatus" xml:space="preserve">
+    <value>Статус замовлення</value>
+  </data>
+  <data name="StatusAccepted" xml:space="preserve">
+    <value>Прийняте</value>
+  </data>
+  <data name="StatusCanceled" xml:space="preserve">
+    <value>Скасоване</value>
+  </data>
+  <data name="StatusComplited" xml:space="preserve">
+    <value>Виконане</value>
+  </data>
+  <data name="StatusNew" xml:space="preserve">
+    <value>Нове</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Всього</value>
+  </data>
+  <data name="OrdersHistory" xml:space="preserve">
+    <value>Історія Ваших придбань/збережені Вами кошики</value>
+  </data>
+  <data name="CartItemsCount" xml:space="preserve">
+    <value>В кошику товарiв</value>
+  </data>
+  <data name="EmptyCart" xml:space="preserve">
+    <value>Очистити кошик</value>
+  </data>
+  <data name="MakeOrder" xml:space="preserve">
+    <value>Оформити замовлення</value>
+  </data>
+  <data name="PurchaseTotalPrice" xml:space="preserve">
+    <value>Вартiсть покупки, грн.</value>
+  </data>
+  <data name="Recalculate" xml:space="preserve">
+    <value>Перерахувати</value>
+  </data>
+  <data name="Card" xml:space="preserve">
+    <value>Картка</value>
+  </data>
+  <data name="Encash" xml:space="preserve">
+    <value>Готівка</value>
+  </data>
+  <data name="Noncash" xml:space="preserve">
+    <value>Безготівковий розрахунок</value>
+  </data>
+  <data name="Agreed" xml:space="preserve">
+    <value>Я згоден з даними умовами</value>
+  </data>
+  <data name="DiscountWillBeRespected" xml:space="preserve">
+    <value>Чек з урахуванням знижки ви отримаєте у кур'єра при доставці</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="InputCaptcha" xml:space="preserve">
+    <value>Введіть символи з картинки (символи не чутливі до регістру)</value>
+  </data>
+  <data name="InputVoucher" xml:space="preserve">
+    <value>Номер вашої дисконтної картки (якщо є)</value>
+  </data>
+  <data name="SelectPaymentType" xml:space="preserve">
+    <value>Оберіть форму оплати</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Коментарi</value>
+  </data>
+  <data name="ContactPhone" xml:space="preserve">
+    <value>Конактний телефон</value>
+  </data>
+  <data name="DeliveryDateTime" xml:space="preserve">
+    <value>Дата i час доставки</value>
+  </data>
+  <data name="YourDetails" xml:space="preserve">
+    <value>Вашi реквiзити</value>
+  </data>
+  <data name="UserCabinet" xml:space="preserve">
+    <value>Кабінет користувача</value>
+  </data>
+  <data name="OfCart" xml:space="preserve">
+    <value>Кошика</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Доставка</value>
+  </data>
+  <data name="DeliveryInfo" xml:space="preserve">
+    <value>Iнформацiя про доставку</value>
+  </data>
+  <data name="DealerInformation" xml:space="preserve">
+    <value>Iнформацiя про фiрму</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Вiдгуки</value>
+  </data>
+  <data name="OfTheSiteVisitors" xml:space="preserve">
+    <value>вiдвiдувачiв сайту</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Пошук</value>
+  </data>
+  <data name="CreateFeedback" xml:space="preserve">
+    <value>Залишити відгук</value>
+  </data>
+  <data name="EmptyFeedback" xml:space="preserve">
+    <value>Для цього продавця ще немає відгуків. Ви можете бути першим.</value>
+  </data>
+  <data name="IncorrectCaptcha" xml:space="preserve">
+    <value>Невірно введені символи з зображення</value>
+  </data>
+  <data name="RegisterToFeedback" xml:space="preserve">
+    <value>Зареєструйтеся, щоб залишити відгук</value>
+  </data>
+  <data name="AccountCreationFailed" xml:space="preserve">
+    <value>Спроба реєстрації була невдалою, будь-ласка, виправте помилки і спробуйте ще раз.</value>
+  </data>
+  <data name="EmailIncorrect" xml:space="preserve">
+    <value>Невірний формат електронної скриньки</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Введіть електронну скриньку</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Введіть ім'я</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Введіть прізвище</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Новий користувач</value>
+  </data>
+  <data name="PasswordAndConfirmationShouldMatch" xml:space="preserve">
+    <value>Пароль та підтвердження повинні співпадати</value>
+  </data>
+  <data name="PasswordShouldContain" xml:space="preserve">
+    <value>Довжина паролю не повинна бути меньшою чим</value>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>Введіть мобільний телефон</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Змінити пароль</value>
+  </data>
+  <data name="CheckValidatoinValue" xml:space="preserve">
+    <value>Неправильно введений код підтвердження</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Введіть нижчевказаний код підтвердження</value>
+  </data>
+  <data name="UserAgreement" xml:space="preserve">
+    <value>Угода з користувачем</value>
+  </data>
+  <data name="CharactersInLength" xml:space="preserve">
+    <value>символів</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Підтвердження нового паролю</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Поточний пароль</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Новий пароль</value>
+  </data>
+  <data name="NewPasswordsAreRequired" xml:space="preserve">
+    <value>Новий пароль повинен складитись мінімум з</value>
+  </data>
+  <data name="PasswordChange" xml:space="preserve">
+    <value>Зміна паролю</value>
+  </data>
+  <data name="PasswordChangeWasUnsuccessful" xml:space="preserve">
+    <value>Пароль не був змінений. Виправте помилки і спробуйте знову.</value>
+  </data>
+  <data name="TheCurrentPasswordIsIncorrectOrTheNewPasswordIsInvalid" xml:space="preserve">
+    <value>Поточний пароль невірний або невірно введений новий</value>
+  </data>
+  <data name="PasswordHasBeenChanged" xml:space="preserve">
+    <value>Ваш пароль змінено.</value>
+  </data>
+  <data name="CityRequired" xml:space="preserve">
+    <value>Не вказано мiсто</value>
+  </data>
+  <data name="DateTimeInvalidOrEmpty" xml:space="preserve">
+    <value>Дату не вказано або введено невiрно</value>
+  </data>
+  <data name="DeliveryAddressRequired" xml:space="preserve">
+    <value>Не вказано адресу доставки</value>
+  </data>
+  <data name="TimeInvalidOrEmpty" xml:space="preserve">
+    <value>Час не вказано або введено невiрно</value>
+  </data>
+  <data name="YouMustAgree" xml:space="preserve">
+    <value>Ви не погодилися з умовами надання послуги</value>
+  </data>
+  <data name="ErrDuplicateEmail" xml:space="preserve">
+    <value>Користувач з такою Email-адресою вже зареєстрований. Будь-ласка введіть іншу Email-адресу.</value>
+  </data>
+  <data name="ErrDuplicateUserName" xml:space="preserve">
+    <value>Користувач з таким ім'ям вже зареєстрований. Будь-ласка введіть інше ім'я.</value>
+  </data>
+  <data name="ErrInvalidEmail" xml:space="preserve">
+    <value>Невірно введена Email-адреса.</value>
+  </data>
+  <data name="ErrInvalidPassword" xml:space="preserve">
+    <value>Невірно введений пароль.</value>
+  </data>
+  <data name="ErrInvalidUserName" xml:space="preserve">
+    <value>Невірно введене ім'я користувача.</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Відправити</value>
+  </data>
+  <data name="Feedback2" xml:space="preserve">
+    <value>Зворотній зв'язок</value>
+  </data>
+  <data name="MessageBody" xml:space="preserve">
+    <value>Текст повідомлення</value>
+  </data>
+  <data name="MessageSubj" xml:space="preserve">
+    <value>Тема повідомлення</value>
+  </data>
+  <data name="YourName" xml:space="preserve">
+    <value>Ваше ім'я</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Облiковий запис</value>
+  </data>
+  <data name="DealerCabinet" xml:space="preserve">
+    <value>Власний кабiнет продавця</value>
+  </data>
+  <data name="ImportedProducts" xml:space="preserve">
+    <value>Iмпортованi товари</value>
+  </data>
+  <data name="MainPage" xml:space="preserve">
+    <value>Головна</value>
+  </data>
+  <data name="MessageRequired" xml:space="preserve">
+    <value>Не заповнене поле "Текст повідомлення"</value>
+  </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Оплата</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="WouldRegister" xml:space="preserve">
+    <value>Бажаєте зареєструватися та отримати додаткові зручності?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Дякуємо за Ваше замовлення! При замовленні "на сьогодні" впродовж 3-10 хвилин з Вами зв'яжиться менеджер для підтвердження замовлення.</value>
+  </data>
+  <data name="ToMainPage" xml:space="preserve">
+    <value>На головну</value>
+  </data>
+  <data name="HasDiscounts" xml:space="preserve">
+    <value>Можна ввести ваучер</value>
+  </data>
+  <data name="Top" xml:space="preserve">
+    <value>Топ</value>
+  </data>
+  <data name="TopDealers" xml:space="preserve">
+    <value>Топ продавцi</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Акція</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Новий</value>
+  </data>
+  <data name="CreateNews" xml:space="preserve">
+    <value>Створити новину</value>
+  </data>
+  <data name="EditNews" xml:space="preserve">
+    <value>Редагувати новину</value>
+  </data>
+  <data name="Header" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="LongText" xml:space="preserve">
+    <value>Повний текст</value>
+  </data>
+  <data name="NorAllProperties" xml:space="preserve">
+    <value>Введенi не всi данi</value>
+  </data>
+  <data name="ShortText" xml:space="preserve">
+    <value>Короткий текст</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Детальніше</value>
+  </data>
+  <data name="CheckedSaveTo" xml:space="preserve">
+    <value>Вiдмiченi зберегти в</value>
+  </data>
+  <data name="MoveCheckedToNew" xml:space="preserve">
+    <value>Перемiстити в новi</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Вартiсть</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Ласкаво просимо</value>
+  </data>
+  <data name="YouHaveNewOrder" xml:space="preserve">
+    <value>У вас нове замовлення</value>
+  </data>
+  <data name="LastOrderStatus" xml:space="preserve">
+    <value>Статус останнього замовлення</value>
+  </data>
+  <data name="YouHaveNewOrders" xml:space="preserve">
+    <value>У вас нових замовлень</value>
+  </data>
+  <data name="StartText" xml:space="preserve">
+    <value>Текст на головнiй</value>
+  </data>
+  <data name="TopProducts" xml:space="preserve">
+    <value>Топ товарів</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>Zamov - портал онлайн замовлень. Замовлення піци, замовлення суші, замовлення обідів та доставка їжі</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Фото</value>
+  </data>
+  <data name="RepeatOrder" xml:space="preserve">
+    <value>Повторити замовлення</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Увага</value>
+  </data>
+  <data name="PageExpired" xml:space="preserve">
+    <value>Сторiнка не актуальна</value>
+  </data>
+  <data name="PageExpiredText" xml:space="preserve">
+    <value>Ця сторiнка бiльше не актуальна. Для продровження роботи повернiться </value>
+  </data>
+  <data name="ToTheMainPage" xml:space="preserve">
+    <value>На головну</value>
+  </data>
+  <data name="CardNumber" xml:space="preserve">
+    <value>Номер картки</value>
+  </data>
+  <data name="CannotMakeOrder" xml:space="preserve">
+    <value>Ви не можете оформити замовлення, тому що ваш кошик порожнiй. Будь-ласка, виберiть товар i покладiть його до кошику.</value>
+  </data>
+  <data name="YourCartIsEmpty" xml:space="preserve">
+    <value>Ваш кошик порожній. Будь-ласка, виберіть товар і покладіть його до кошику.</value>
+  </data>
+  <data name="DealerGroupName" xml:space="preserve">
+    <value>Назва групи</value>
+  </data>
+  <data name="SubCategoryText" xml:space="preserve">
+    <value>Текст пiдкатегорiï</value>
+  </data>
+  <data name="ExpireOrders" xml:space="preserve">
+    <value>Почистити замовлення</value>
+  </data>
+  <data name="OrderLifeTime" xml:space="preserve">
+    <value>Замовлення нове протягом</value>
+  </data>
+  <data name="PaymentType" xml:space="preserve">
+    <value>Вид оплати</value>
+  </data>
+  <data name="VoucherNumber" xml:space="preserve">
+    <value>Номер дисконтної картки</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Перемiстити</value>
+  </data>
+  <data name="MoveTo" xml:space="preserve">
+    <value>Перемiстити в</value>
+  </data>
+  <data name="NoUserMatchesEmail" xml:space="preserve">
+    <value>Користувача з таким Email не існує</value>
+  </data>
+  <data name="EnterEmail" xml:space="preserve">
+    <value>Введіть адресу своєї поштової скриньки:</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Забули пароль?</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>Покупцi</value>
+  </data>
+  <data name="DescriptionPhoto" xml:space="preserve">
+    <value>Фото / опис</value>
+  </data>
+  <data name="IncorrectUserNameOrPassword" xml:space="preserve">
+    <value>Невірно введене ім'я користувача або пароль</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Введіть пароль</value>
+  </data>
+  <data name="UserNameRequired" xml:space="preserve">
+    <value>Введіть ім'я користувача</value>
+  </data>
+  <data name="AllProducts" xml:space="preserve">
+    <value>Усi товари</value>
+  </data>
+  <data name="OrderDate" xml:space="preserve">
+    <value>Дата замовлення</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="PriceHrn" xml:space="preserve">
+    <value>Цiна, грн.</value>
+  </data>
+  <data name="PhoneIncorrect" xml:space="preserve">
+    <value>Веедено телефон невiрного формату</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Видаленi</value>
+  </data>
+  <data name="RefreshCaptcha" xml:space="preserve">
+    <value>Оновити зображення</value>
+  </data>
+  <data name="NumberIndex" xml:space="preserve">
+    <value>№ п/п</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>Про нас</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Звiти</value>
+  </data>
+  <data name="VoucherNumberShort" xml:space="preserve">
+    <value>Дисконтна карта</value>
+  </data>
+  <data name="Manufacturers" xml:space="preserve">
+    <value>Виробники</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Виробник</value>
+  </data>
+  <data name="SetManufacturer" xml:space="preserve">
+    <value>Назначити виробника</value>
+  </data>
+  <data name="Currencies" xml:space="preserve">
+    <value>Валюта</value>
+  </data>
+  <data name="CurrencyRates" xml:space="preserve">
+    <value>Курси валют</value>
+  </data>
+  <data name="AboutUsALittle" xml:space="preserve">
+    <value>Трохи про нас</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Назад до списку</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Розташування</value>
+  </data>
+  <data name="PositionBottomCenter" xml:space="preserve">
+    <value>Знизу в центрі</value>
+  </data>
+  <data name="PositionBottomLeft" xml:space="preserve">
+    <value>Знизу зліва</value>
+  </data>
+  <data name="PositionBottomRight" xml:space="preserve">
+    <value>Знизу зправа</value>
+  </data>
+  <data name="PositionTop" xml:space="preserve">
+    <value>Зверху</value>
+  </data>
+  <data name="NoscriptMessage" xml:space="preserve">
+    <value>У Вашому браузері вимкнений JavaScript. Вмикніть в налаштуваннях браузера JavaScript, щоб можно було здійснити замовлення.</value>
+  </data>
+  <data name="ContactPhones" xml:space="preserve">
+    <value>Контактні телефони</value>
+  </data>
+  <data name="Banner" xml:space="preserve">
+    <value>Банер</value>
+  </data>
+  <data name="UploadXml" xml:space="preserve">
+    <value>Завантаження Xml</value>
+  </data>
+  <data name="Brand" xml:space="preserve">
+    <value>Бренд</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+  <data name="Avg" xml:space="preserve">
+    <value>Середня</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Макс.</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Мін.</value>
+  </data>
+  <data name="WhereToOrder" xml:space="preserve">
+    <value>Де замовити?</value>
+  </data>
+  <data name="Proposals" xml:space="preserve">
+    <value>Пропозицій</value>
+  </data>
+  <data name="Choice" xml:space="preserve">
+    <value>Вибір</value>
+  </data>
+  <data name="ListOfProposals" xml:space="preserve">
+    <value>Cписок пропозицій ...</value>
+  </data>
+  <data name="Hrn" xml:space="preserve">
+    <value>грн.</value>
+  </data>
+  <data name="AboutDealer" xml:space="preserve">
+    <value>Про продавця</value>
+  </data>
+  <data name="Availability" xml:space="preserve">
+    <value>Наявність</value>
+  </data>
+  <data name="DescriptionProduct" xml:space="preserve">
+    <value>Опис товару</value>
+  </data>
+  <data name="Quarantee" xml:space="preserve">
+    <value>Гарантія</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Застосувати</value>
+  </data>
+  <data name="MainBrand" xml:space="preserve">
+    <value>Загальний бренд</value>
+  </data>
+  <data name="RangePrice" xml:space="preserve">
+    <value>Діапазон цін</value>
+  </data>
+  <data name="ChoiceAll" xml:space="preserve">
+    <value>вибрати все</value>
+  </data>
+  <data name="AvrCost" xml:space="preserve">
+    <value>Середня ціна</value>
+  </data>
+  <data name="ProposalsChoiceProduct" xml:space="preserve">
+    <value>Пропозицій вибраного товару</value>
+  </data>
+  <data name="YouHaveChosen" xml:space="preserve">
+    <value>Ви вибрали</value>
+  </data>
+  <data name="ResetFilters" xml:space="preserve">
+    <value>Скинути фільтри</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>від</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>до</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Включено</value>
+  </data>
+  <data name="Novelty" xml:space="preserve">
+    <value>Новинки ...</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Сторінка</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Сторінки</value>
+  </data>
+  <data name="Feedbacks" xml:space="preserve">
+    <value>Відгуків</value>
+  </data>
+  <data name="ShowAllBrands" xml:space="preserve">
+    <value>Показати всі</value>
+  </data>
+  <data name="Brands" xml:space="preserve">
+    <value>Бренди</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>ФІЛЬТРИ</value>
+  </data>
+  <data name="IndexNumberOutput" xml:space="preserve">
+    <value>Порядок</value>
+  </data>
+  <data name="ProductsAdditional" xml:space="preserve">
+    <value>Товари II</value>
+  </data>
+  <data name="UrlPhotoProduct" xml:space="preserve">
+    <value>URL фото товару</value>
+  </data>
+  <data name="LoadProductsFromXml" xml:space="preserve">
+    <value>Завантажити товари з Xml</value>
+  </data>
+  <data name="LoadProductsFromXls" xml:space="preserve">
+    <value>Завантажити товари з файлу Excel (.xls, .xlsx)</value>
+  </data>
+  <data name="UnitShort" xml:space="preserve">
+    <value>Од.вим.</value>
+  </data>
+  <data name="PhoneMobile" xml:space="preserve">
+    <value>Мобільний телефон</value>
+  </data>
+  <data name="TenDigits" xml:space="preserve">
+    <value>10 цифр</value>
+  </data>
+  <data name="EmptyFeedbackForProduct" xml:space="preserve">
+    <value>Для цього товару ще немає відгуків. Ви можете бути першим.</value>
+  </data>
+</root>

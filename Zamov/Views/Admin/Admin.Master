@@ -1,0 +1,204 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" MasterPageFile="~/Views/Shared/Site.Master" %>
+
+<%@ Import Namespace="Microsoft.Web.Mvc" %>
+<%@ Import Namespace="Zamov.Helpers" %>
+<asp:Content ContentPlaceHolderID="leftMenu" runat="server">
+    <%
+        List<SelectListItem> items = new List<SelectListItem>();
+        SelectListItem currencies = new SelectListItem { Text = Html.ResourceString("Currencies"), Value = VirtualPathUtility.ToAbsolute("~/Admin/Currencies") };
+        SelectListItem brands = new SelectListItem { Text = Html.ResourceString("Brands"), Value = VirtualPathUtility.ToAbsolute("~/Admin/Brands") };
+        SelectListItem cities = new SelectListItem { Text = Html.ResourceString("Cities"), Value = VirtualPathUtility.ToAbsolute("~/Admin/Cities") };
+        SelectListItem dealers = new SelectListItem { Text = Html.ResourceString("Dealers"), Value = VirtualPathUtility.ToAbsolute("~/Admin/Dealers") };
+        SelectListItem categories = new SelectListItem { Text = Html.ResourceString("Categories"), Value = VirtualPathUtility.ToAbsolute("~/Admin/Categories") };
+        SelectListItem groupsAdditions = new SelectListItem { Text = Html.ResourceString("Groups"), Value = VirtualPathUtility.ToAbsolute("~/Admin/GroupsAddit") };
+        SelectListItem productAdditions = new SelectListItem { Text = Html.ResourceString("Products"), Value = VirtualPathUtility.ToAbsolute("~/Admin/ProductsAddit") };
+        SelectListItem users = new SelectListItem { Text = Html.ResourceString("Users"), Value = "/Admin/Users?userType=customers" };
+        SelectListItem news = new SelectListItem { Text = Html.ResourceString("News"), Value = VirtualPathUtility.ToAbsolute("~/Admin/News") };
+        SelectListItem agreement = new SelectListItem { Text = Html.ResourceString("UserAgreement"), Value = "javascript:userAgreement();" };
+        SelectListItem contacts = new SelectListItem { Text = Html.ResourceString("Contacts"), Value = "javascript:contacts();" };
+        SelectListItem startText = new SelectListItem { Text = Html.ResourceString("StartText"), Value = "javascript:startText();" };
+        SelectListItem aboutUsALittle = new SelectListItem { Text = Html.ResourceString("AboutUsALittle"), Value = "javascript:aboutUsALittle();" };
+        SelectListItem expireOrders = new SelectListItem { Text = Html.ResourceString("ExpireOrders"), Value = "/Admin/ExpireOrders" };
+        SelectListItem copyDealer = new SelectListItem { Text = "Копировать продавца", Value = "/Admin/CopyDealer" };
+        SelectListItem advert = new SelectListItem {Text = "Реклама", Value = "/Admin/Advert"};
+        SelectListItem dealersBrands = new SelectListItem { Text = "Расфасовка брэндов дилеров", Value = "/Admin/DealersBrands" };
+        SelectListItem dealersGroups = new SelectListItem { Text = "Расфасовка групп дилеров", Value = "/Admin/DealersGroups" };
+        SelectListItem dealersProducts = new SelectListItem { Text = "Расфасовка продуктов дилеров", Value = "/Admin/DealersProducts" };
+        items.Add(currencies);
+        items.Add(brands);
+        items.Add(cities);
+        items.Add(dealers);
+        items.Add(categories);
+        items.Add(groupsAdditions);
+        items.Add(productAdditions);
+        items.Add(users);
+        items.Add(news);
+        items.Add(agreement);
+        items.Add(contacts);
+        items.Add(startText);
+        items.Add(aboutUsALittle);
+        items.Add(expireOrders);
+        items.Add(copyDealer);
+        items.Add(advert);
+        items.Add(dealersBrands);
+        items.Add(dealersGroups);
+        items.Add(dealersProducts);
+        Html.RenderAction<Zamov.Controllers.PagePartsController>(ac => ac.LeftMenu(Html.ResourceString("Administration"), items)); 
+    %>
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="bodyTop">
+    <asp:ContentPlaceHolder runat="server" ID="bodyTop"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="mainContent" runat="server">
+
+    <a href="/Admin/ClearCache" target="_blank">Очистить кеш</a>
+
+    <script type="text/javascript">
+        $(function() {
+            $("#contacts")
+                .dialog({
+                    autoOpen: false,
+                    width: 700,
+                    height: 500,
+                    minHeight: 360,
+                    resizable: false,
+                    buttons: {
+                        '<%= Html.ResourceString("Cancel") %>': function() { closeContacts(); },
+                        '<%= Html.ResourceString("Save") %>': function() { $get("cotactsFrame").contentWindow.updateData(); }
+                    }
+                });
+
+            $("#userAgreement")
+                .dialog({
+                    autoOpen: false,
+                    width: 700,
+                    height: 500,
+                    minHeight: 360,
+                    resizable: false,
+                    buttons: {
+                        '<%= Html.ResourceString("Cancel") %>': function() { closeAgreement(); },
+                        '<%= Html.ResourceString("Save") %>': function() { $get("userAgreementFrame").contentWindow.updateData(); }
+                    }
+                });
+
+                $("#startText")
+                .dialog({
+                    autoOpen: false,
+                    width: 700,
+                    height: 500,
+                    minHeight: 360,
+                    resizable: false,
+                    buttons: {
+                        '<%= Html.ResourceString("Cancel") %>': function() { closeStartText(); },
+                        '<%= Html.ResourceString("Save") %>': function() { $get("startTextFrame").contentWindow.updateData(); }
+                    }
+                });
+
+                $("#aboutUsALittle")
+                .dialog({
+                    autoOpen: false,
+                    width: 700,
+                    height: 500,
+                    minHeight: 360,
+                    resizable: false,
+                    buttons: {
+                    '<%= Html.ResourceString("Cancel") %>': function() { closeAboutUsALittle(); },
+                    '<%= Html.ResourceString("Save") %>': function() { $get("aboutUsALittleFrame").contentWindow.updateData(); }
+                    }
+                });
+
+                $("#subCategoryText")
+                .dialog({
+                    autoOpen: false,
+                    width: 700,
+                    height: 500,
+                    minHeight: 360,
+                    resizable: false,
+                    buttons: {
+                        '<%= Html.ResourceString("Cancel") %>': function() { closeStartText(); },
+                        '<%= Html.ResourceString("Save") %>': function() { $get("subCategoryTextFrame").contentWindow.updateData(); }
+                    }
+                });
+        })
+
+        function contacts() {
+            $("#contacts")
+                .html('<iframe frameborder="0" name="cotacts" id="cotactsFrame" hidefocus="true" style="width:660px; height:500px;" src="/Admin/ContactsHeader"></iframe>');
+            $("#contacts").dialog('open');
+        }
+
+        function userAgreement() {
+            $("#userAgreement")
+                .html('<iframe frameborder="0" name="userAgreementFrame" id="userAgreementFrame" hidefocus="true" style="width:660px; height:500px;" src="/Admin/Agreement"></iframe>');
+            $("#userAgreement").dialog('open');
+        }
+
+        function startText() {
+            $("#startText")
+                .html('<iframe frameborder="0" name="startTextFrame" id="startTextFrame" hidefocus="true" style="width:660px; height:500px;" src="/Admin/StartText"></iframe>');
+            $("#startText").dialog('open');
+        }
+
+        function aboutUsALittle() {
+            $("#aboutUsALittle")
+                .html('<iframe frameborder="0" name="aboutUsALittleFrame" id="aboutUsALittleFrame" hidefocus="true" style="width:660px; height:500px;" src="/Admin/AboutUsALittle"></iframe>');
+            $("#aboutUsALittle").dialog('open');
+        }
+
+        function subCategoryText() {
+            $("#subCategoryText")
+                .html('<iframe frameborder="0" name="startTextFrame" id="subCategoryTextFrame" hidefocus="true" style="width:660px; height:500px;" src="/Admin/SubCategoryText"></iframe>');
+            $("#subCategoryText").dialog('open');
+        }
+
+        function closeContacts() {
+            $("#contacts").dialog('close');
+        }
+
+        function closeAgreement() {
+            $("#userAgreement").dialog('close');
+        }
+
+        function closeStartText() {
+            $("#startText").dialog('close');
+        }
+
+        function closeAboutUsALittle() {
+            $("#aboutUsALittle").dialog('close');
+        }
+
+        function closeSubCategoryText() {
+            $("#subCategoryText").dialog('close');
+        }
+    </script>
+
+    <div id="contacts" title='<%= Html.ResourceString("Contacts") %>'>
+    </div>
+    <div id="userAgreement" title='<%= Html.ResourceString("UserAgreement") %>'>
+    </div>
+    <div id="startText" title='<%= Html.ResourceString("StartText") %>'>
+    </div>
+    <div id="aboutUsALittle" title='<%= Html.ResourceString("AboutUsALittle") %>'>
+    </div>
+    <div id="subCategoryText" title="<%= Html.ResourceString("SubCategoryText") %>" >
+    </div>
+    
+    <asp:ContentPlaceHolder ID="mainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="includes" runat="server">
+    <%= Html.RegisterCss("~/Content/Admin.css") %>
+    <%= Html.RegisterCss("~/Content/redmond/jquery.ui.css")%>
+    <%= Html.RegisterCss("~/Content/jquery.autocomplete.css")%>
+    <%= Html.RegisterCss("~/Content/thickbox.css")%>
+    <%= Html.RegisterJS("jquery.ui.js")%>
+    <%= Html.RegisterJS("jquery.autocomplete.js")%>
+    <%= Html.RegisterJS("jquery.ajaxQueue.js")%>    
+    <%= Html.RegisterJS("jquery.bgiframe.min.js")%>    
+    <%= Html.RegisterJS("thickbox-compressed.js")%>    
+
+    <asp:ContentPlaceHolder runat="server" ID="includes">
+    </asp:ContentPlaceHolder>
+</asp:Content>

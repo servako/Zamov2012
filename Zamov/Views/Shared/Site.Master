@@ -1,0 +1,167 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="Microsoft.Web.Mvc" %>
+<%@ Import Namespace="Zamov.Helpers" %>
+<%@ Import Namespace="Zamov.Controllers" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="seoContent"><% Html.RenderPartial("MetaData"); %></asp:ContentPlaceHolder>
+    <title><asp:ContentPlaceHolder runat="server" ID="titleContent"><%= TempData["title"] %></asp:ContentPlaceHolder></title>
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+    <%= Html.RegisterJS("MicrosoftAjax.js")%>
+    <%= Html.RegisterJS("MicrosoftMvcAjax.js")%>
+    <%= Html.RegisterJS("jquery.js")%>
+    <%= Html.RegisterJS("common.js")%>
+    <%= Html.RegisterJS("jquery.corner.js")%>
+    <%= Html.RegisterJS("swfobject.js")%>
+    <asp:ContentPlaceHolder runat="server" ID="includes">
+    </asp:ContentPlaceHolder>
+     
+    <script type="text/javascript">
+        var fancyboxAttached = false;
+        var showOrdershadowsDeclared = false;
+
+        $(function () {
+            $("#header").corner("top");
+            $("#mainMenu .outer .inner").corner("bottom").parent().css('padding', '1px').corner("bottom");
+            var h = 1 * $("#mainContent").offset().top + 1 * $("#mainContent").height();
+            $(window).scroll(
+                function () {
+                    //                    if (typeof window.innerWidth != 'undefined') {
+                    //                        viewportHeight = window.innerHeight
+                    //                    }
+
+                    //                    else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) {
+                    //                        viewportHeight = document.documentElement.clientHeight
+                    //                    }
+                    //                    var leftSideBottom = $("#leftSide").height() + $("#leftSide").offset().top;
+                    //                    var moveMenu = viewportHeight > leftSideBottom;
+                    //                    if (moveMenu) {
+                    $("#leftSide").css("top", $(window).scrollTop());
+                    //                    }
+                });
+        });
+    </script>
+    
+</head>
+<body>
+    <noscript>
+        <div class="noscript">
+            <%= Html.ResourceString("NoscriptMessage") %>
+        </div>
+    </noscript>
+    <asp:ContentPlaceHolder runat="server" ID="bodyTop"></asp:ContentPlaceHolder>
+    <map id="logoLink" name="logoLink">
+        <area alt="Zamov.com" shape="rect" coords="0,40,233, 90" href="/" />
+    </map>
+    <div class="shader">
+    </div>
+    <div id="header">
+        <% if (!(ViewContext.RouteData.Values["controller"] == "Products" && ViewContext.RouteData.Values["action"] == "ShowProducts"))
+           {
+               Session["FilterProductPriceRange"] = null;
+               Session["FilterBrands"] = null;
+           } %>
+        <div id="headerRight">
+            <div id="languageSelector">
+                <% Html.RenderPartial("LanguageSelector"); %>
+            </div>
+            <div id="headerSelectors">
+                <% if (!(ViewContext.RouteData.Values["controller"] == "Home" && ViewContext.RouteData.Values["action"] == "Index"))  %>
+                    <% Html.RenderAction<PagePartsController>(ppc => ppc.HeaderSelectors()); %>
+            </div>
+        </div>
+        <div id="masterLogin">
+            <% Html.RenderPartial("LogonStatus"); %>
+            <%if (Roles.IsUserInRole("Administrators")) Html.RenderPartial("AdminOrdersInfo"); %>
+            <%if (Roles.IsUserInRole("Dealers")) Html.RenderPartial("DealerOrdersInfo"); %>
+            <%if (Roles.IsUserInRole("Managers")) Html.RenderPartial("ManagerOrdersInfo"); %>
+        </div>
+        <center>
+            <div id="logo">
+                <%= Html.Image("~/Content/img/logo.jpg", "Zamov.com", new { usemap="#logoLink", style="border:none"})%>
+            </div>
+        </center>
+    </div>
+    <div id="mainMenu">
+        <table cellpadding="0" cellspacing="2">
+            <tr>
+                <td valign="top">
+                    <%=Html.ResourceString("Search").ToLower() %>
+                </td>
+                <td valign="top" class="searchCell">
+                    <%using (Html.BeginForm("SearchProduct", "Search", FormMethod.Get))
+                      {%><%=Html.TextBox("searchContext", null, null)%>
+                      <input type="image" src="/Content/img/zoom.jpg" /><br />
+                    <%
+                        } %>
+                </td>
+            </tr>
+        </table>
+        <div class="outer greyBg">
+            <div class="inner whiteBg">
+                <% Html.RenderAction<PagePartsController>(ac => ac.MainMenu()); %>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="TopBanner" runat="server"></asp:ContentPlaceHolder>
+     
+    <div id="breadCrumbs">
+        <%= Html.BreadCrumbs()%></div>
+    <div id="content">
+        <asp:ContentPlaceHolder runat="server" ID="ContentTop">
+        </asp:ContentPlaceHolder>
+        <div id="leftSide">
+            <asp:ContentPlaceHolder ID="leftMenu" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="mainContent">
+            <div class="subHeader">
+               <table style="width:100%; height: 100%;">
+                    <tr>
+                        <td>
+                            <asp:ContentPlaceHolder ID="dealerLogo" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="productPhoto" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                        <td>
+                            <center>
+                                <% Html.RenderPartial("Cart"); %>
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </div>
+    <div id="rightBanner">
+    </div>
+     
+            <div id="footer">   
+            <asp:ContentPlaceHolder runat="server" ID="BottomBanner"></asp:ContentPlaceHolder>
+           
+                <span class="copyright">© 2009 &mdash; <%=DateTime.Now.Year%> Zamov</span>
+                <asp:ContentPlaceHolder runat="server" ID="ContentBottom">
+                </asp:ContentPlaceHolder>
+            </div>
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-10840182-1");
+            pageTracker._trackPageview();
+        } catch (err) { }
+    </script>
+
+</body>
+</html>

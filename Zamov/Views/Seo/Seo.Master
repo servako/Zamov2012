@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" MasterPageFile="~/Views/Shared/Site.Master" %>
+
+<%@ Import Namespace="Microsoft.Web.Mvc" %>
+<%@ Import Namespace="Zamov.Helpers" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="leftMenu" runat="server">
+    <%
+        List<SelectListItem> items = new List<SelectListItem>();
+        SelectListItem forUrl = new SelectListItem { Text = "Для определенных url", Value = VirtualPathUtility.ToAbsolute("~/Seo/ForUrl") };
+        SelectListItem seotemplate = new SelectListItem { Text = "Шаблоны для autoseo", Value = VirtualPathUtility.ToAbsolute("~/Seo/SeoTemplate") };
+
+        items.Add(forUrl);
+        items.Add(seotemplate);
+
+        Html.RenderAction<Zamov.Controllers.PagePartsController>(ac => ac.LeftMenu("SEO", items)); 
+    %>
+</asp:Content>
+
+<asp:Content ID="Content2" runat="server" ContentPlaceHolderID="bodyTop">
+    <asp:ContentPlaceHolder runat="server" ID="bodyTop"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="mainContent" runat="server">    
+    <asp:ContentPlaceHolder ID="mainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="includes" runat="server">
+    <%= Html.RegisterCss("~/Content/Admin.css") %>
+    <%= Html.RegisterCss("~/Content/redmond/jquery.ui.css")%>
+    <%= Html.RegisterCss("~/Content/jquery.autocomplete.css")%>
+    <%= Html.RegisterCss("~/Content/thickbox.css")%>
+    <%= Html.RegisterJS("jquery.ui.js")%>
+    <%= Html.RegisterJS("jquery.autocomplete.js")%>
+    <%= Html.RegisterJS("jquery.ajaxQueue.js")%>    
+    <%= Html.RegisterJS("jquery.bgiframe.min.js")%>    
+    <%= Html.RegisterJS("thickbox-compressed.js")%>
+
+    <asp:ContentPlaceHolder runat="server" ID="includes">
+    </asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.mobisoftline.com/" targetNamespace="http://ws.mobisoftline.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="requestMessageStatus" type="tns:requestMessageStatus" />
+  <xs:element name="requestMessageStatusResponse" type="tns:requestMessageStatusResponse" />
+  <xs:element name="requestNotificationStatus" type="tns:requestNotificationStatus" />
+  <xs:element name="requestNotificationStatusResponse" type="tns:requestNotificationStatusResponse" />
+  <xs:element name="sendMessages" type="tns:sendMessages" />
+  <xs:element name="sendMessagesResponse" type="tns:sendMessagesResponse" />
+  <xs:complexType name="requestNotificationStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:notificationRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="notificationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:request">
+        <xs:sequence>
+          <xs:element name="statusType" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="request">
+    <xs:sequence>
+      <xs:element name="requestID" type="xs:long" />
+      <xs:element minOccurs="0" name="user" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestNotificationStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="responseMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responseSynchData">
+        <xs:sequence>
+          <xs:element name="accepted" type="xs:int" />
+          <xs:element name="delivered" type="xs:int" />
+          <xs:element name="expired" type="xs:int" />
+          <xs:element name="notificationID" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="statuses" nillable="true" type="tns:status" />
+          <xs:element name="total" type="xs:int" />
+          <xs:element name="undeliverable" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="responseSynchData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorDescription" type="xs:string" />
+      <xs:element name="notificationResponse" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="status">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:responseSynchData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+          <xs:element name="id" type="xs:long" />
+          <xs:element minOccurs="0" name="phone" type="xs:string" />
+          <xs:element name="status" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="sendMessages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:notification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="notification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alfaName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="contacts" nillable="true" type="tns:contact" />
+      <xs:element name="priority" type="xs:int" />
+      <xs:element minOccurs="0" name="template" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contact">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="params" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sendMessagesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:responseMessage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestMessageStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:messageRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="messageRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:request">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="requestMessageStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:status" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

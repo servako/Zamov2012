@@ -1,0 +1,63 @@
+﻿*{margin:0; padding:0;}
+body{font-family: Arial, Sans-Serif, Helvetica, Tahoma; font-size:0.8em;}
+
+
+
+select
+{border:1px solid #bdbdbd; color:#afafaf;}
+#header, #mainMenu, #breadCrumbs{width:auto; margin:30px 40px 0px; min-width:820px;}
+#content{min-width:645px;}
+.greyBg{background:#CFDAD7}
+.whiteBg{background:white;}
+
+#header{height:142px; background:#092D45 url(img/headerBg.png) no-repeat left bottom; border:1px solid #5F798A;}
+#header .headerContent{width:100%;}
+#header .leftBorder, #header .rightBorder{ width:7px; height:142px;}
+#header .rightBorder{float:right; background: transparent url(img/headerRight.jpg)}
+#header .leftBorder{float:left; background: transparent url(img/headerLeft.jpg)}
+
+#masterLogin{border-left:1px solid #234256;
+float:right;
+height:142px;
+width:195px;
+margin-right:40px;
+}
+.registerLink{text-decoration:none;}
+.registerLink:hover{text-decoration:underline;}
+.logonInput{width:135px;}
+
+#mainMenu{margin-top:0px;}
+#mainMenu .outer{float:right; position:relative; padding:0 10px; height:20px;}
+#mainMenu .outer .inner{padding:0 5px; color:#969696; font-size:13px; height:20px;}
+#mainMenu .outer .inner a{color:#969696;font-size:13px; text-decoration:none;}
+#mainMenu .outer .inner a:hover{text-decoration:underline;}
+
+#breadCrumbs{height:30px;}
+
+#header, #header a{color:white;}
+#header a{text-decoration:none;}
+#header a:hover{text-decoration:underline;}
+#languageSelector{padding-top:16px; margin-left:26px;}
+#headerSelectors{padding-top:50px; padding-left:16px;}
+#headerSelectors table tr td{padding-left:10px;}
+#headerSelectors table tr td span{font-family:Verdana; font-style:italic; color:#003366;}
+#headerSelectors table tr td select{width:160px;}
+#headerRight{position:absolute;}
+#logo{padding-left:200px;}
+
+#content{width:auto; margin:30px 40px 0px 40px; padding-bottom:60px; border-bottom:6px solid #99B6BA;}
+.startText{width:auto; margin:20px 40px 0px 40px; }
+.headerSelect{background-color:#092d45; border:1px solid Teal; color:Teal; padding:0 5px; font-weight:bold;}
+
+.logOnProperties{padding:10px;}
+#dealerOrdersInfo{padding-left:10px;}
+
+#logonCell a{font-size:x-small;}
+
+.validationError{color:Red;}
+
+
+.currentCategory{color:Black;}
+.currentCity{color:Black;}
+
+.startText{width:auto; background:transparent;}

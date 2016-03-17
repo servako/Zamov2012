@@ -1,0 +1,1922 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BaseEntities.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="BaseEntitiesStoreContainer">
+          <EntitySet Name="Advert" EntityType="BaseEntities.Store.Advert" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Brands" EntityType="BaseEntities.Store.Brands" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="BaseEntities.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CategoryImages" EntityType="BaseEntities.Store.CategoryImages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cities" EntityType="BaseEntities.Store.Cities" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currencies" EntityType="BaseEntities.Store.Currencies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealerCategoryMapping" EntityType="BaseEntities.Store.DealerCategoryMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealerCityMappings" EntityType="BaseEntities.Store.DealerCityMappings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealerContacts" EntityType="BaseEntities.Store.DealerContacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealerCurrencyRates" EntityType="BaseEntities.Store.DealerCurrencyRates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealerFeedback" EntityType="BaseEntities.Store.DealerFeedback" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dealers" EntityType="BaseEntities.Store.Dealers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealersGroups" EntityType="BaseEntities.Store.DealersGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DealersProducts" EntityType="BaseEntities.Store.DealersProducts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ExchangeRate" EntityType="BaseEntities.Store.ExchangeRate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Groups" EntityType="BaseEntities.Store.Groups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GroupsAdditional" EntityType="BaseEntities.Store.GroupsAdditional" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Manufacturer" EntityType="BaseEntities.Store.Manufacturer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ManufacturerProductMapping" EntityType="BaseEntities.Store.ManufacturerProductMapping" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductCityMappings" EntityType="BaseEntities.Store.ProductCityMappings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductImages" EntityType="BaseEntities.Store.ProductImages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="BaseEntities.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductsAdditional" EntityType="BaseEntities.Store.ProductsAdditional" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductsAdditionalFeedback" EntityType="BaseEntities.Store.ProductsAdditionalFeedback" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TranslationItemsTypes" EntityType="BaseEntities.Store.TranslationItemsTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Translations" EntityType="BaseEntities.Store.Translations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Unit" EntityType="BaseEntities.Store.Unit" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Categories_Categories" Association="BaseEntities.Store.FK_Categories_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Categories1" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CategoryImages_Categories" Association="BaseEntities.Store.FK_CategoryImages_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="CategoryImages" EntitySet="CategoryImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerCategoryMapping_Categories" Association="BaseEntities.Store.FK_DealerCategoryMapping_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="DealerCategoryMapping" EntitySet="DealerCategoryMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerCategoryMapping_Dealers" Association="BaseEntities.Store.FK_DealerCategoryMapping_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="DealerCategoryMapping" EntitySet="DealerCategoryMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerCityMappings_Cities" Association="BaseEntities.Store.FK_DealerCityMappings_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="DealerCityMappings" EntitySet="DealerCityMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerCityMappings_Dealers" Association="BaseEntities.Store.FK_DealerCityMappings_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="DealerCityMappings" EntitySet="DealerCityMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerContacts_Dealers" Association="BaseEntities.Store.FK_DealerContacts_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="DealerContacts" EntitySet="DealerContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerCurrencyRates_Currency" Association="BaseEntities.Store.FK_DealerCurrencyRates_Currency">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="DealerCurrencyRates" EntitySet="DealerCurrencyRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerCurrencyRates_Dealer" Association="BaseEntities.Store.FK_DealerCurrencyRates_Dealer">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="DealerCurrencyRates" EntitySet="DealerCurrencyRates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealerFeedback_Dealers" Association="BaseEntities.Store.FK_DealerFeedback_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="DealerFeedback" EntitySet="DealerFeedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealersGroups_GroupsAdditional" Association="BaseEntities.Store.FK_DealersGroups_GroupsAdditional">
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+            <End Role="DealersGroups" EntitySet="DealersGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExchangeRate_Currencies" Association="BaseEntities.Store.FK_ExchangeRate_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExchangeRate_Dealers" Association="BaseEntities.Store.FK_ExchangeRate_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Categories" Association="BaseEntities.Store.FK_Groups_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Dealers" Association="BaseEntities.Store.FK_Groups_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Groups_Groups" Association="BaseEntities.Store.FK_Groups_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Groups1" EntitySet="Groups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupsAdditional_Categories" Association="BaseEntities.Store.FK_GroupsAdditional_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GroupsAdditional_GroupsAdditional" Association="BaseEntities.Store.FK_GroupsAdditional_GroupsAdditional">
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+            <End Role="GroupsAdditional1" EntitySet="GroupsAdditional" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ManufacturerProductMapping_Manufacturers" Association="BaseEntities.Store.FK_ManufacturerProductMapping_Manufacturers">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="ManufacturerProductMapping" EntitySet="ManufacturerProductMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ManufacturerProductMapping_Products" Association="BaseEntities.Store.FK_ManufacturerProductMapping_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ManufacturerProductMapping" EntitySet="ManufacturerProductMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCityMappings_Cities" Association="BaseEntities.Store.FK_ProductCityMappings_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="ProductCityMappings" EntitySet="ProductCityMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCityMappings_Products" Association="BaseEntities.Store.FK_ProductCityMappings_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductCityMappings" EntitySet="ProductCityMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductImages_Products" Association="BaseEntities.Store.FK_ProductImages_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ProductImages" EntitySet="ProductImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Currency" Association="BaseEntities.Store.FK_Products_Currency">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Dealers" Association="BaseEntities.Store.FK_Products_Dealers">
+            <End Role="Dealers" EntitySet="Dealers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Groups" Association="BaseEntities.Store.FK_Products_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductsAdditional_GroupsAdditional" Association="BaseEntities.Store.FK_ProductsAdditional_GroupsAdditional">
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+            <End Role="ProductsAdditional" EntitySet="ProductsAdditional" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Advert">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="ImageSource" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="brandID" />
+          </Key>
+          <Property Name="brandID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="brandName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="IndexNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoryImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="ImageType" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="IndexNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="Sign" Type="varchar" MaxLength="10" />
+          <Property Name="ShortName" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="DealerCategoryMapping">
+          <Key>
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DealerCityMappings">
+          <Key>
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DealerContacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="ContactType" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DealerCurrencyRates">
+          <Key>
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="CurrencyId" />
+          </Key>
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="CurrencyId" Type="int" Nullable="false" />
+          <Property Name="Rate" Type="decimal" Nullable="false" Precision="12" Scale="8" />
+        </EntityType>
+        <EntityType Name="DealerFeedback">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Email" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dealers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="LogoImage" Type="image" />
+          <Property Name="LogoType" Type="varchar" MaxLength="20" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="HasDiscounts" Type="bit" Nullable="false" />
+          <Property Name="TopDealer" Type="bit" Nullable="false" />
+          <Property Name="TopDealerTill" Type="datetime" />
+          <Property Name="Cash" Type="bit" Nullable="false" />
+          <Property Name="Noncash" Type="bit" Nullable="false" />
+          <Property Name="Card" Type="bit" Nullable="false" />
+          <Property Name="OrderLifeTime" Type="int" />
+          <Property Name="Phone" Type="varchar" MaxLength="255" />
+          <Property Name="Banner" Type="varchar" MaxLength="255" />
+          <Property Name="BannerEnabled" Type="bit" Nullable="false" />
+          <Property Name="LoadXml" Type="bit" Nullable="false" />
+          <Property Name="IndexNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DealersGroups">
+          <Key>
+            <PropertyRef Name="dgID" />
+          </Key>
+          <Property Name="dgID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dg_dealerID" Type="int" Nullable="false" />
+          <Property Name="dg_dgrID" Type="int" Nullable="false" />
+          <Property Name="dg_parGrID" Type="int" Nullable="false" />
+          <Property Name="dg_dgrName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="dg_ourgrID" Type="int" />
+        </EntityType>
+        <EntityType Name="DealersProducts">
+          <Key>
+            <PropertyRef Name="dpID" />
+          </Key>
+          <Property Name="dpID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dp_dealerID" Type="int" Nullable="false" />
+          <Property Name="dp_prodID" Type="int" Nullable="false" />
+          <Property Name="dp_prodName" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="dp_grID" Type="int" Nullable="false" />
+          <Property Name="dp_brandID" Type="int" Nullable="false" />
+          <Property Name="dp_unit" Type="varchar" MaxLength="50" />
+          <Property Name="dp_ourpID" Type="int" />
+          <Property Name="dp_photoUrl" Type="varchar" MaxLength="100" />
+          <Property Name="dp_prodUrl" Type="varchar" MaxLength="100" />
+          <Property Name="dp_guarantee" Type="int" />
+          <Property Name="dp_descr" Type="varchar(max)" />
+          <Property Name="dp_enable" Type="bit" Nullable="false" />
+          <Property Name="dp_delete" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExchangeRate">
+          <Key>
+            <PropertyRef Name="xrID" />
+          </Key>
+          <Property Name="xrID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="xr_curID" Type="int" Nullable="false" />
+          <Property Name="xr_dealerID" Type="int" Nullable="false" />
+          <Property Name="xr_value" Type="decimal" Nullable="false" Precision="12" Scale="6" />
+          <Property Name="xr_dateBeg" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="GroupId" Type="int" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="DisplayProductImages" Type="bit" Nullable="false" />
+          <Property Name="OldId" Type="int" />
+          <Property Name="IndexNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupsAdditional">
+          <Key>
+            <PropertyRef Name="grID" />
+          </Key>
+          <Property Name="grID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="gr_Name" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="gr_ParID" Type="int" />
+          <Property Name="gr_CatID" Type="int" />
+          <Property Name="gr_enabled" Type="bit" Nullable="false" />
+          <Property Name="gr_deleted" Type="bit" Nullable="false" />
+          <Property Name="gr_displayProductImages" Type="bit" Nullable="false" />
+          <Property Name="gr_dateBeg" Type="datetime" />
+          <Property Name="gr_IndexNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ManufacturerProductMapping">
+          <Key>
+            <PropertyRef Name="ManufacturerId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ManufacturerId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductCityMappings">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="ImageType" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Default" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PartNumber" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="DealerId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="New" Type="bit" Nullable="false" />
+          <Property Name="TopProduct" Type="bit" Nullable="false" />
+          <Property Name="Action" Type="bit" Nullable="false" />
+          <Property Name="OldId" Type="int" />
+          <Property Name="CurrencyId" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductsAdditional">
+          <Key>
+            <PropertyRef Name="p_prodID" />
+          </Key>
+          <Property Name="p_prodID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="p_partNum" Type="varchar" MaxLength="50" />
+          <Property Name="p_prodName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="p_unit" Type="varchar" MaxLength="50" />
+          <Property Name="p_grID" Type="int" />
+          <Property Name="p_enabled" Type="bit" Nullable="false" />
+          <Property Name="p_deleted" Type="bit" Nullable="false" />
+          <Property Name="p_new" Type="bit" Nullable="false" />
+          <Property Name="p_top" Type="bit" Nullable="false" />
+          <Property Name="p_action" Type="bit" Nullable="false" />
+          <Property Name="p_descr" Type="varchar(max)" />
+          <Property Name="p_brandID" Type="int" />
+          <Property Name="p_photo_url" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="ProductsAdditionalFeedback">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Email" Type="nvarchar" MaxLength="1000" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="150" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TranslationItemsTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Translations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Language" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="TranslationItemTypeId" Type="int" Nullable="false" />
+          <Property Name="Translation" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Categories_Categories">
+          <End Role="Categories" Type="BaseEntities.Store.Categories" Multiplicity="0..1" />
+          <End Role="Categories1" Type="BaseEntities.Store.Categories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Categories1">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CategoryImages_Categories">
+          <End Role="Categories" Type="BaseEntities.Store.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CategoryImages" Type="BaseEntities.Store.CategoryImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CategoryImages">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerCategoryMapping_Categories">
+          <End Role="Categories" Type="BaseEntities.Store.Categories" Multiplicity="1" />
+          <End Role="DealerCategoryMapping" Type="BaseEntities.Store.DealerCategoryMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerCategoryMapping">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerCategoryMapping_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="DealerCategoryMapping" Type="BaseEntities.Store.DealerCategoryMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerCategoryMapping">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerCityMappings_Cities">
+          <End Role="Cities" Type="BaseEntities.Store.Cities" Multiplicity="1" />
+          <End Role="DealerCityMappings" Type="BaseEntities.Store.DealerCityMappings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerCityMappings">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerCityMappings_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="DealerCityMappings" Type="BaseEntities.Store.DealerCityMappings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerCityMappings">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerContacts_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="DealerContacts" Type="BaseEntities.Store.DealerContacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerContacts">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerCurrencyRates_Currency">
+          <End Role="Currencies" Type="BaseEntities.Store.Currencies" Multiplicity="1" />
+          <End Role="DealerCurrencyRates" Type="BaseEntities.Store.DealerCurrencyRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerCurrencyRates">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerCurrencyRates_Dealer">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="DealerCurrencyRates" Type="BaseEntities.Store.DealerCurrencyRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerCurrencyRates">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealerFeedback_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="DealerFeedback" Type="BaseEntities.Store.DealerFeedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealerFeedback">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealersGroups_GroupsAdditional">
+          <End Role="GroupsAdditional" Type="BaseEntities.Store.GroupsAdditional" Multiplicity="0..1" />
+          <End Role="DealersGroups" Type="BaseEntities.Store.DealersGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupsAdditional">
+              <PropertyRef Name="grID" />
+            </Principal>
+            <Dependent Role="DealersGroups">
+              <PropertyRef Name="dg_ourgrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExchangeRate_Currencies">
+          <End Role="Currencies" Type="BaseEntities.Store.Currencies" Multiplicity="1" />
+          <End Role="ExchangeRate" Type="BaseEntities.Store.ExchangeRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExchangeRate">
+              <PropertyRef Name="xr_curID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExchangeRate_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="ExchangeRate" Type="BaseEntities.Store.ExchangeRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ExchangeRate">
+              <PropertyRef Name="xr_dealerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Categories">
+          <End Role="Categories" Type="BaseEntities.Store.Categories" Multiplicity="0..1" />
+          <End Role="Groups" Type="BaseEntities.Store.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="Groups" Type="BaseEntities.Store.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Groups">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Groups_Groups">
+          <End Role="Groups" Type="BaseEntities.Store.Groups" Multiplicity="0..1" />
+          <End Role="Groups1" Type="BaseEntities.Store.Groups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Groups1">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupsAdditional_Categories">
+          <End Role="Categories" Type="BaseEntities.Store.Categories" Multiplicity="0..1" />
+          <End Role="GroupsAdditional" Type="BaseEntities.Store.GroupsAdditional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupsAdditional">
+              <PropertyRef Name="gr_CatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GroupsAdditional_GroupsAdditional">
+          <End Role="GroupsAdditional" Type="BaseEntities.Store.GroupsAdditional" Multiplicity="0..1" />
+          <End Role="GroupsAdditional1" Type="BaseEntities.Store.GroupsAdditional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupsAdditional">
+              <PropertyRef Name="grID" />
+            </Principal>
+            <Dependent Role="GroupsAdditional1">
+              <PropertyRef Name="gr_ParID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ManufacturerProductMapping_Manufacturers">
+          <End Role="Manufacturer" Type="BaseEntities.Store.Manufacturer" Multiplicity="1" />
+          <End Role="ManufacturerProductMapping" Type="BaseEntities.Store.ManufacturerProductMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ManufacturerProductMapping">
+              <PropertyRef Name="ManufacturerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ManufacturerProductMapping_Products">
+          <End Role="Products" Type="BaseEntities.Store.Products" Multiplicity="1" />
+          <End Role="ManufacturerProductMapping" Type="BaseEntities.Store.ManufacturerProductMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ManufacturerProductMapping">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCityMappings_Cities">
+          <End Role="Cities" Type="BaseEntities.Store.Cities" Multiplicity="1" />
+          <End Role="ProductCityMappings" Type="BaseEntities.Store.ProductCityMappings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCityMappings">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCityMappings_Products">
+          <End Role="Products" Type="BaseEntities.Store.Products" Multiplicity="1" />
+          <End Role="ProductCityMappings" Type="BaseEntities.Store.ProductCityMappings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCityMappings">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductImages_Products">
+          <End Role="Products" Type="BaseEntities.Store.Products" Multiplicity="1" />
+          <End Role="ProductImages" Type="BaseEntities.Store.ProductImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductImages">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Currency">
+          <End Role="Currencies" Type="BaseEntities.Store.Currencies" Multiplicity="0..1" />
+          <End Role="Products" Type="BaseEntities.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CurrencyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Dealers">
+          <End Role="Dealers" Type="BaseEntities.Store.Dealers" Multiplicity="1" />
+          <End Role="Products" Type="BaseEntities.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="DealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Groups">
+          <End Role="Groups" Type="BaseEntities.Store.Groups" Multiplicity="1" />
+          <End Role="Products" Type="BaseEntities.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductsAdditional_GroupsAdditional">
+          <End Role="GroupsAdditional" Type="BaseEntities.Store.GroupsAdditional" Multiplicity="0..1" />
+          <End Role="ProductsAdditional" Type="BaseEntities.Store.ProductsAdditional" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupsAdditional">
+              <PropertyRef Name="grID" />
+            </Principal>
+            <Dependent Role="ProductsAdditional">
+              <PropertyRef Name="p_grID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Categories_GetByCityId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cityId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CategoryImages_Cleanup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="categoryId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Cities_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Cities_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="enabled" Type="bit" Mode="In" />
+          <Parameter Name="translations" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="CopyDealer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dealerId" Type="int" Mode="In" />
+          <Parameter Name="cityId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="deleteDealer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dealerId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="DeleteTranslations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItemId" Type="int" Mode="In" />
+          <Parameter Name="TranslationItemTypeId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ExpireOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Groups_GetPaths" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dealerId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductImages_Cleanup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="ProductManufacturer_Cleanup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="productId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_InsertImported" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="updatesXml" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="dealerId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Products_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="updatesXml" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Products_UpdateImported" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="updatesXml" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="ProductsAdditional_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="updatesXml" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_ProductPrices_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pID" Type="int" Mode="In" />
+          <Parameter Name="cityId" Type="int" Mode="In" />
+          <Parameter Name="dealerProdId" Type="varchar(max)" Mode="In" />
+          <Parameter Name="prodNameLike" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Translations_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="translationsXml" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <!--Errors Found During Generation:
+      warning 6037: Foreign key constraint 'FK_DealerCityMappings_DealerCityMappings' has been omitted from the storage model. Column 'CityId' of table 'BaseEntities.Store.DealerCityMappings' is a foreign key participating in multiple relationships. A one-to-one Entity Model will not validate since data inconsistency is possible.
+      
+      <Association Name="FK_DealerCityMappings_DealerCityMappings">
+        <End Role="DealerCityMappings" Type="BaseEntities.Store.DealerCityMappings" Multiplicity="1" />
+        <End Role="DealerCityMappings1" Type="BaseEntities.Store.DealerCityMappings" Multiplicity="0..1" />
+        <ReferentialConstraint>
+          <Principal Role="DealerCityMappings">
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="CityId" />
+          </Principal>
+          <Dependent Role="DealerCityMappings1">
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="CityId" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>-->
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseEntities" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="ZamovStorage">
+          <EntitySet Name="Categories" EntityType="BaseEntities.Category" />
+          <EntitySet Name="Cities" EntityType="BaseEntities.City" />
+          <EntitySet Name="Dealers" EntityType="BaseEntities.Dealer" />
+          <EntitySet Name="Groups" EntityType="BaseEntities.Group" />
+          <EntitySet Name="Products" EntityType="BaseEntities.Product" />
+          <EntitySet Name="TranslationItemsTypes" EntityType="BaseEntities.TranslationItemsType" />
+          <EntitySet Name="Translations" EntityType="BaseEntities.Translation" />
+          <AssociationSet Name="FK_Products_Dealers" Association="BaseEntities.FK_Products_Dealers">
+            <End EntitySet="Dealers" Role="Dealers" />
+            <End EntitySet="Products" Role="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Groups" Association="BaseEntities.FK_Products_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="DealerCityMappings" Association="BaseEntities.DealerCityMappings">
+            <End EntitySet="Cities" Role="Cities" />
+            <End EntitySet="Dealers" Role="Dealers" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCityMappings" Association="BaseEntities.ProductCityMappings">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="ProductImages" EntityType="BaseEntities.ProductImage" />
+          <AssociationSet Name="FK_ProductImages_Products" Association="BaseEntities.FK_ProductImages_Products">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductImages" EntitySet="ProductImages" /></AssociationSet>
+          <FunctionImport Name="DeleteTranslations" EntitySet="Translations" ReturnType="Collection(BaseEntities.Translation)">
+            <Parameter Name="ItemId" Mode="In" Type="Int32" />
+            <Parameter Name="TranslationItemTypeId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateTranslations" EntitySet="Translations" ReturnType="Collection(BaseEntities.Translation)">
+          <Parameter Name="translationsXml" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="DealerCategoryMapping" Association="BaseEntities.DealerCategoryMapping">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Dealer" EntitySet="Dealers" /></AssociationSet>
+          <AssociationSet Name="FK_Groups_Dealers" Association="BaseEntities.FK_Groups_Dealers">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="Group" EntitySet="Groups" /></AssociationSet>
+          <AssociationSet Name="FK_Categories_Categories" Association="BaseEntities.FK_Categories_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Category1" EntitySet="Categories" /></AssociationSet>
+          <FunctionImport Name="ProductImages_Cleanup">
+          <Parameter Name="productId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ProductManufacturer_Cleanup">
+          <Parameter Name="productId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateProducts">
+          <Parameter Name="updatesXml" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="FK_Groups_Groups" Association="BaseEntities.FK_Groups_Groups">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Group1" EntitySet="Groups" /></AssociationSet>
+          <FunctionImport Name="InsertImportedProducts">
+            <Parameter Name="updatesXml" Mode="In" Type="String" />
+            <Parameter Name="dealerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateImportedProducts">
+          <Parameter Name="updatesXml" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetGroupsPath">
+          <Parameter Name="dealerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="CategoryImages" EntityType="BaseEntities.CategoryImage" />
+          <AssociationSet Name="FK_CategoryImages_Categories" Association="BaseEntities.FK_CategoryImages_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="CategoryImages" EntitySet="CategoryImages" /></AssociationSet>
+          <FunctionImport Name="GetCategories" EntitySet="Categories" ReturnType="Collection(BaseEntities.Category)">
+          <Parameter Name="cityId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CategoryImages_Cleanup">
+          <Parameter Name="categoryId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="DealerFeedback" EntityType="BaseEntities.DealerFeedback" />
+          <AssociationSet Name="FK_DealerFeedback_Dealers" Association="BaseEntities.FK_DealerFeedback_Dealers">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="DealerFeedback" EntitySet="DealerFeedback" /></AssociationSet>
+          <EntitySet Name="MeassureUnits" EntityType="BaseEntities.MeassureUnit" />
+          <FunctionImport Name="deleteDealer">
+          <Parameter Name="dealerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="ExpireOrders" />
+          <AssociationSet Name="FK_Groups_Categories" Association="BaseEntities.FK_Groups_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Group" EntitySet="Groups" /></AssociationSet>
+          <FunctionImport Name="CopyDealer">
+            <Parameter Name="dealerId" Mode="In" Type="Int32" />
+            <Parameter Name="cityId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Manufacturer" EntityType="BaseEntities.Manufacturer" />
+          <AssociationSet Name="ManufacturerProductMapping" Association="BaseEntities.ManufacturerProductMapping">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Product" EntitySet="Products" /></AssociationSet>
+          <EntitySet Name="Currencies" EntityType="BaseEntities.Currencies" />
+          <EntitySet Name="DealerCurrencyRates" EntityType="BaseEntities.DealerCurrencyRates" />
+          <AssociationSet Name="FK_DealerCurrencyRates_Currency" Association="BaseEntities.FK_DealerCurrencyRates_Currency">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="DealerCurrencyRates" EntitySet="DealerCurrencyRates" /></AssociationSet>
+          <AssociationSet Name="FK_Products_Currency" Association="BaseEntities.FK_Products_Currency">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="Product" EntitySet="Products" /></AssociationSet>
+          <AssociationSet Name="FK_DealerCurrencyRates_Dealer" Association="BaseEntities.FK_DealerCurrencyRates_Dealer">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="DealerCurrencyRates" EntitySet="DealerCurrencyRates" /></AssociationSet>
+          <EntitySet Name="DealerContacts" EntityType="BaseEntities.DealerContacts" />
+          <AssociationSet Name="FK_DealerContacts_Dealers" Association="BaseEntities.FK_DealerContacts_Dealers">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="DealerContacts" EntitySet="DealerContacts" /></AssociationSet>
+          <EntitySet Name="Advert" EntityType="BaseEntities.Advert" />
+          <AssociationSet Name="AdvertCategory" Association="BaseEntities.AdvertCategory">
+            <End Role="Advert" EntitySet="Advert" />
+            <End Role="Category" EntitySet="Categories" /></AssociationSet>
+          <EntitySet Name="GroupsAdditional" EntityType="BaseEntities.GroupsAdditional" />
+          <AssociationSet Name="FK_GroupsAdditional_Categories" Association="BaseEntities.FK_GroupsAdditional_Categories">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" /></AssociationSet>
+          <AssociationSet Name="FK_GroupsAdditional_GroupsAdditional" Association="BaseEntities.FK_GroupsAdditional_GroupsAdditional">
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+            <End Role="GroupsAdditional1" EntitySet="GroupsAdditional" /></AssociationSet>
+          <EntitySet Name="ProductsAdditional" EntityType="BaseEntities.ProductsAdditional" />
+          <AssociationSet Name="FK_ProductsAdditional_GroupsAdditional" Association="BaseEntities.FK_ProductsAdditional_GroupsAdditional">
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+            <End Role="ProductsAdditional" EntitySet="ProductsAdditional" /></AssociationSet>
+          <EntitySet Name="Brands" EntityType="BaseEntities.Brands" />
+          <EntitySet Name="DealersGroups" EntityType="BaseEntities.DealersGroups" />
+          <AssociationSet Name="FK_DealersGroups_GroupsAdditional" Association="BaseEntities.FK_DealersGroups_GroupsAdditional">
+            <End Role="GroupsAdditional" EntitySet="GroupsAdditional" />
+            <End Role="DealersGroups" EntitySet="DealersGroups" />
+          </AssociationSet>
+          <EntitySet Name="ExchangeRate" EntityType="BaseEntities.ExchangeRate" />
+          <AssociationSet Name="FK_ExchangeRate_Currencies" Association="BaseEntities.FK_ExchangeRate_Currencies">
+            <End Role="Currencies" EntitySet="Currencies" />
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExchangeRate_Dealers" Association="BaseEntities.FK_ExchangeRate_Dealers">
+            <End Role="Dealer" EntitySet="Dealers" />
+            <End Role="ExchangeRate" EntitySet="ExchangeRate" />
+          </AssociationSet>
+          <EntitySet Name="ProductsAdditionalFeedback" EntityType="BaseEntities.ProductsAdditionalFeedback" />
+          <FunctionImport Name="UpdateProductsAdditional">
+          <Parameter Name="updatesXml" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="DealersProducts" EntityType="BaseEntities.DealersProducts" />
+          </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Dealers" Relationship="BaseEntities.DealerCategoryMapping" FromRole="Category" ToRole="Dealer" />
+          <NavigationProperty Name="Categories" Relationship="BaseEntities.FK_Categories_Categories" FromRole="Category" ToRole="Category1" />
+          <NavigationProperty Name="Parent" Relationship="BaseEntities.FK_Categories_Categories" FromRole="Category1" ToRole="Category" />
+          <NavigationProperty Name="Images" Relationship="BaseEntities.FK_CategoryImages_Categories" FromRole="Category" ToRole="CategoryImages" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Groups" Relationship="BaseEntities.FK_Groups_Categories" FromRole="Category" ToRole="Group" />
+          <NavigationProperty Name="Advert" Relationship="BaseEntities.AdvertCategory" FromRole="Category" ToRole="Advert" />
+          <NavigationProperty Name="GroupsAdditional" Relationship="BaseEntities.FK_GroupsAdditional_Categories" FromRole="Category" ToRole="GroupsAdditional" />
+          <Property Type="Int32" Name="IndexNumber" Nullable="false" /></EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Dealers" Relationship="BaseEntities.DealerCityMappings" FromRole="Cities" ToRole="Dealers" />
+          <NavigationProperty Name="Products" Relationship="BaseEntities.ProductCityMappings" FromRole="Cities" ToRole="Products" />
+          <Property Type="Int32" Name="IndexNumber" Nullable="false" />
+          </EntityType>
+        <EntityType Name="Dealer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property MaxLength="500" Unicode="false" FixedLength="false" Name="Name" Type="String" Nullable="false" />
+          <Property MaxLength="Max" FixedLength="false" Name="LogoImage" Type="Binary" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="BaseEntities.FK_Products_Dealers" FromRole="Dealers" ToRole="Products" />
+          <NavigationProperty Name="Cities" Relationship="BaseEntities.DealerCityMappings" FromRole="Dealers" ToRole="Cities" />
+          <NavigationProperty Name="Categories" Relationship="BaseEntities.DealerCategoryMapping" FromRole="Dealer" ToRole="Category" />
+          <Property Name="LogoType" Type="String" Nullable="true" />
+          <NavigationProperty Name="Groups" Relationship="BaseEntities.FK_Groups_Dealers" FromRole="Dealer" ToRole="Group" />
+          <Property Name="HasDiscounts" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="DealerFeedback" Relationship="BaseEntities.FK_DealerFeedback_Dealers" FromRole="Dealer" ToRole="DealerFeedback" />
+          <Property Name="TopDealer" Type="Boolean" Nullable="false" />
+          <Property Name="TopDealerTill" Type="DateTime" Nullable="true" />
+          <Property Name="Cash" Type="Boolean" Nullable="false" />
+          <Property Name="Noncash" Type="Boolean" Nullable="false" />
+          <Property Name="Card" Type="Boolean" Nullable="false" />
+          <Property Name="OrderLifeTime" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="DealerCurrencyRates" Relationship="BaseEntities.FK_DealerCurrencyRates_Dealer" FromRole="Dealer" ToRole="DealerCurrencyRates" />
+          <NavigationProperty Name="DealerContacts" Relationship="BaseEntities.FK_DealerContacts_Dealers" FromRole="Dealer" ToRole="DealerContacts" />
+          <Property Name="Phone" Type="String" Nullable="true" />
+          <Property Name="Banner" Type="String" Nullable="true" />
+          <Property Name="BannerEnabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ExchangeRate" Relationship="BaseEntities.FK_ExchangeRate_Dealers" FromRole="Dealer" ToRole="ExchangeRate" />
+          <Property Type="Boolean" Name="LoadXml" Nullable="false" />
+          <Property Type="Int32" Name="IndexNumber" Nullable="false" /></EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="BaseEntities.FK_Products_Groups" FromRole="Groups" ToRole="Products" />
+          <NavigationProperty Name="Dealer" Relationship="BaseEntities.FK_Groups_Dealers" FromRole="Group" ToRole="Dealer" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Groups" Relationship="BaseEntities.FK_Groups_Groups" FromRole="Group" ToRole="Group1" />
+          <NavigationProperty Name="Parent" Relationship="BaseEntities.FK_Groups_Groups" FromRole="Group1" ToRole="Group" />
+          <Property Name="DisplayProductImages" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="BaseEntities.FK_Groups_Categories" FromRole="Group" ToRole="Category" />
+          <Property Name="OldId" Type="Int32" Nullable="true" />
+          <Property Type="Int32" Name="IndexNumber" Nullable="false" /></EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Dealer" Relationship="BaseEntities.FK_Products_Dealers" FromRole="Products" ToRole="Dealers" />
+          <NavigationProperty Name="Group" Relationship="BaseEntities.FK_Products_Groups" FromRole="Products" ToRole="Groups" />
+          <NavigationProperty Name="Cities" Relationship="BaseEntities.ProductCityMappings" FromRole="Products" ToRole="Cities" />
+          <NavigationProperty Name="ProductImages" Relationship="BaseEntities.FK_ProductImages_Products" FromRole="Product" ToRole="ProductImages" />
+          <Property Name="PartNumber" Type="String" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Unit" Type="String" Nullable="true" />
+          <Property Name="New" Type="Boolean" Nullable="false" />
+          <Property Name="TopProduct" Type="Boolean" Nullable="false" />
+          <Property Name="Action" Type="Boolean" Nullable="false" />
+          <Property Name="OldId" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Manufacturer" Relationship="BaseEntities.ManufacturerProductMapping" FromRole="Product" ToRole="Manufacturer" />
+          <NavigationProperty Name="Currencies" Relationship="BaseEntities.FK_Products_Currency" FromRole="Product" ToRole="Currencies" /></EntityType>
+        <EntityType Name="TranslationItemsType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          </EntityType>
+        <EntityType Name="Translation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Language" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="TranslationItemTypeId" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          </EntityType>
+        <Association Name="FK_Products_Dealers">
+          <End Type="BaseEntities.Dealer" Multiplicity="1" Role="Dealers" />
+          <End Type="BaseEntities.Product" Multiplicity="*" Role="Products" />
+        </Association>
+        <Association Name="FK_Products_Groups">
+          <End Role="Groups" Type="BaseEntities.Group" Multiplicity="1" />
+          <End Role="Products" Type="BaseEntities.Product" Multiplicity="*" />
+        </Association>
+        <Association Name="DealerCityMappings">
+          <End Type="BaseEntities.City" Multiplicity="*" Role="Cities" />
+          <End Type="BaseEntities.Dealer" Multiplicity="*" Role="Dealers" />
+        </Association>
+        <Association Name="ProductCityMappings">
+          <End Role="Cities" Type="BaseEntities.City" Multiplicity="*" />
+          <End Role="Products" Type="BaseEntities.Product" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="BaseEntities.FK_ProductImages_Products" FromRole="ProductImages" ToRole="Product" />
+          <Property Name="ImageType" Type="String" Nullable="false" />
+          <Property Name="Default" Type="Boolean" Nullable="false" /></EntityType>
+        <Association Name="FK_ProductImages_Products">
+          <End Type="BaseEntities.Product" Role="Product" Multiplicity="1" />
+          <End Type="BaseEntities.ProductImage" Role="ProductImages" Multiplicity="*" /></Association>
+        <Association Name="DealerCategoryMapping">
+          <End Type="BaseEntities.Category" Role="Category" Multiplicity="*" />
+          <End Type="BaseEntities.Dealer" Role="Dealer" Multiplicity="*" /></Association>
+        <Association Name="FK_Groups_Dealers">
+          <End Type="BaseEntities.Dealer" Role="Dealer" Multiplicity="1" />
+          <End Type="BaseEntities.Group" Role="Group" Multiplicity="*" /></Association>
+        <Association Name="FK_Categories_Categories">
+          <End Type="BaseEntities.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="BaseEntities.Category" Role="Category1" Multiplicity="*" /></Association>
+        <Association Name="FK_Groups_Groups">
+          <End Type="BaseEntities.Group" Role="Group" Multiplicity="0..1" />
+          <End Type="BaseEntities.Group" Role="Group1" Multiplicity="*" /></Association>
+        <EntityType Name="CategoryImage">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="BaseEntities.FK_CategoryImages_Categories" FromRole="CategoryImages" ToRole="Category" />
+          <Property Name="ImageType" Type="String" Nullable="false" /></EntityType>
+        <Association Name="FK_CategoryImages_Categories">
+          <End Type="BaseEntities.Category" Role="Category" Multiplicity="1" />
+          <End Type="BaseEntities.CategoryImage" Role="CategoryImages" Multiplicity="*" /></Association>
+        <EntityType Name="DealerFeedback">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" />
+          <NavigationProperty Name="Dealer" Relationship="BaseEntities.FK_DealerFeedback_Dealers" FromRole="DealerFeedback" ToRole="Dealer" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="FirstName" Type="String" Nullable="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" /></EntityType>
+        <Association Name="FK_DealerFeedback_Dealers">
+          <End Type="BaseEntities.Dealer" Role="Dealer" Multiplicity="1" />
+          <End Type="BaseEntities.DealerFeedback" Role="DealerFeedback" Multiplicity="*" /></Association>
+        <EntityType Name="MeassureUnit">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          </EntityType>
+        <Association Name="FK_Groups_Categories">
+          <End Type="BaseEntities.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="BaseEntities.Group" Role="Group" Multiplicity="*" /></Association>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="BaseEntities.ManufacturerProductMapping" FromRole="Manufacturer" ToRole="Product" />
+          <Property Name="Name" Type="String" Nullable="false" /></EntityType>
+        <Association Name="ManufacturerProductMapping">
+          <End Type="BaseEntities.Manufacturer" Role="Manufacturer" Multiplicity="*" />
+          <End Type="BaseEntities.Product" Role="Product" Multiplicity="*" /></Association>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="ShortName" Type="String" Nullable="true" />
+          <NavigationProperty Name="DealerCurrencyRates" Relationship="BaseEntities.FK_DealerCurrencyRates_Currency" FromRole="Currencies" ToRole="DealerCurrencyRates" />
+          <NavigationProperty Name="Products" Relationship="BaseEntities.FK_Products_Currency" FromRole="Currencies" ToRole="Product" />
+          <Property Name="Sign" Type="String" Nullable="true" />
+          <NavigationProperty Name="ExchangeRate" Relationship="BaseEntities.FK_ExchangeRate_Currencies" FromRole="Currencies" ToRole="ExchangeRate" /></EntityType>
+        <EntityType Name="DealerCurrencyRates">
+          <Key>
+            <PropertyRef Name="DealerId" />
+            <PropertyRef Name="CurrencyId" /></Key>
+          <Property Name="DealerId" Type="Int32" Nullable="false" />
+          <Property Name="CurrencyId" Type="Int32" Nullable="false" />
+          <Property Name="Rate" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Currencies" Relationship="BaseEntities.FK_DealerCurrencyRates_Currency" FromRole="DealerCurrencyRates" ToRole="Currencies" />
+          <NavigationProperty Name="Dealers" Relationship="BaseEntities.FK_DealerCurrencyRates_Dealer" FromRole="DealerCurrencyRates" ToRole="Dealer" /></EntityType>
+        <Association Name="FK_DealerCurrencyRates_Currency">
+          <End Type="BaseEntities.Currencies" Role="Currencies" Multiplicity="1" />
+          <End Type="BaseEntities.DealerCurrencyRates" Role="DealerCurrencyRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currencies">
+              <PropertyRef Name="Id" /></Principal>
+            <Dependent Role="DealerCurrencyRates">
+              <PropertyRef Name="CurrencyId" /></Dependent></ReferentialConstraint></Association>
+        <Association Name="FK_Products_Currency">
+          <End Type="BaseEntities.Currencies" Role="Currencies" Multiplicity="0..1" />
+          <End Type="BaseEntities.Product" Role="Product" Multiplicity="*" /></Association>
+        <Association Name="FK_DealerCurrencyRates_Dealer">
+          <End Type="BaseEntities.Dealer" Role="Dealer" Multiplicity="1" />
+          <End Type="BaseEntities.DealerCurrencyRates" Role="DealerCurrencyRates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dealer">
+              <PropertyRef Name="Id" /></Principal>
+            <Dependent Role="DealerCurrencyRates">
+              <PropertyRef Name="DealerId" /></Dependent></ReferentialConstraint></Association>
+        <EntityType Name="DealerContacts">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ContactType" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" Nullable="true" />
+          <NavigationProperty Name="Dealers" Relationship="BaseEntities.FK_DealerContacts_Dealers" FromRole="DealerContacts" ToRole="Dealer" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" /></EntityType>
+        <Association Name="FK_DealerContacts_Dealers">
+          <End Type="BaseEntities.Dealer" Role="Dealer" Multiplicity="1" />
+          <End Type="BaseEntities.DealerContacts" Role="DealerContacts" Multiplicity="*" /></Association>
+        <EntityType Name="Advert">
+          <Key>
+            <PropertyRef Name="Id" /></Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ImageSource" Type="String" Nullable="true" />
+          <NavigationProperty Name="Category" Relationship="BaseEntities.AdvertCategory" FromRole="Advert" ToRole="Category" />
+          <Property Name="Position" Type="Int32" Nullable="false" /></EntityType>
+        <Association Name="AdvertCategory">
+          <End Type="BaseEntities.Advert" Role="Advert" Multiplicity="0..1" />
+          <End Type="BaseEntities.Category" Role="Category" Multiplicity="1" /></Association>
+        <EntityType Name="GroupsAdditional">
+          <Key>
+            <PropertyRef Name="grID" /></Key>
+          <Property Name="grID" Type="Int32" Nullable="false" />
+          <Property Name="gr_Name" Type="String" Nullable="false" />
+          <Property Name="gr_enabled" Type="Boolean" Nullable="false" />
+          <Property Name="gr_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="gr_displayProductImages" Type="Boolean" Nullable="false" />
+          <Property Name="gr_dateBeg" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Categories" Relationship="BaseEntities.FK_GroupsAdditional_Categories" FromRole="GroupsAdditional" ToRole="Category" />
+          <NavigationProperty Name="GroupsAdditional1" Relationship="BaseEntities.FK_GroupsAdditional_GroupsAdditional" FromRole="GroupsAdditional" ToRole="GroupsAdditional1" />
+          <NavigationProperty Name="Parent" Relationship="BaseEntities.FK_GroupsAdditional_GroupsAdditional" FromRole="GroupsAdditional1" ToRole="GroupsAdditional" />
+          <NavigationProperty Name="ProductsAdditional" Relationship="BaseEntities.FK_ProductsAdditional_GroupsAdditional" FromRole="GroupsAdditional" ToRole="ProductsAdditional" />
+          <NavigationProperty Name="DealersGroups" Relationship="BaseEntities.FK_DealersGroups_GroupsAdditional" FromRole="GroupsAdditional" ToRole="DealersGroups" />
+          <Property Type="Int32" Name="gr_IndexNumber" Nullable="false" /></EntityType>
+        <Association Name="FK_GroupsAdditional_Categories">
+          <End Type="BaseEntities.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="BaseEntities.GroupsAdditional" Role="GroupsAdditional" Multiplicity="*" /></Association>
+        <Association Name="FK_GroupsAdditional_GroupsAdditional">
+          <End Type="BaseEntities.GroupsAdditional" Role="GroupsAdditional" Multiplicity="0..1" />
+          <End Type="BaseEntities.GroupsAdditional" Role="GroupsAdditional1" Multiplicity="*" /></Association>
+        <EntityType Name="ProductsAdditional">
+          <Key>
+            <PropertyRef Name="p_prodID" /></Key>
+          <Property Name="p_prodID" Type="Int32" Nullable="false" />
+          <Property Name="p_partNum" Type="String" Nullable="true" />
+          <Property Name="p_prodName" Type="String" Nullable="false" />
+          <Property Name="p_unit" Type="String" Nullable="true" />
+          <Property Name="p_enabled" Type="Boolean" Nullable="false" />
+          <Property Name="p_deleted" Type="Boolean" Nullable="false" />
+          <Property Name="p_new" Type="Boolean" Nullable="false" />
+          <Property Name="p_top" Type="Boolean" Nullable="false" />
+          <Property Name="p_action" Type="Boolean" Nullable="false" />
+          <Property Name="p_descr" Type="String" Nullable="true" />
+          <Property Name="p_brandID" Type="Int32" Nullable="true" />
+          <Property Name="p_photo_url" Type="String" Nullable="true" />
+          <NavigationProperty Name="GroupsAdditional" Relationship="BaseEntities.FK_ProductsAdditional_GroupsAdditional" FromRole="ProductsAdditional" ToRole="GroupsAdditional" /></EntityType>
+        <Association Name="FK_ProductsAdditional_GroupsAdditional">
+          <End Type="BaseEntities.GroupsAdditional" Role="GroupsAdditional" Multiplicity="0..1" />
+          <End Type="BaseEntities.ProductsAdditional" Role="ProductsAdditional" Multiplicity="*" /></Association>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="brandID" /></Key>
+          <Property Name="brandID" Type="Int32" Nullable="false" />
+          <Property Name="brandName" Type="String" Nullable="false" /></EntityType>
+        <EntityType Name="DealersGroups">
+          <Key>
+            <PropertyRef Name="dgID" />
+          </Key>
+          <Property Type="Int32" Name="dgID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="dg_dealerID" Nullable="false" />
+          <Property Type="Int32" Name="dg_dgrID" Nullable="false" />
+          <Property Type="Int32" Name="dg_parGrID" Nullable="false" />
+          <Property Type="String" Name="dg_dgrName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GroupsAdditional" Relationship="BaseEntities.FK_DealersGroups_GroupsAdditional" FromRole="DealersGroups" ToRole="GroupsAdditional" />
+        </EntityType>
+        <Association Name="FK_DealersGroups_GroupsAdditional">
+          <End Type="BaseEntities.GroupsAdditional" Role="GroupsAdditional" Multiplicity="0..1" />
+          <End Type="BaseEntities.DealersGroups" Role="DealersGroups" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ExchangeRate">
+          <Key>
+            <PropertyRef Name="xrID" />
+          </Key>
+          <Property Type="Int32" Name="xrID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Decimal" Name="xr_value" Nullable="false" Precision="12" Scale="6" />
+          <Property Type="DateTime" Name="xr_dateBeg" Nullable="false" />
+          <NavigationProperty Name="Currencies" Relationship="BaseEntities.FK_ExchangeRate_Currencies" FromRole="ExchangeRate" ToRole="Currencies" />
+          <NavigationProperty Name="Dealers" Relationship="BaseEntities.FK_ExchangeRate_Dealers" FromRole="ExchangeRate" ToRole="Dealer" />
+        </EntityType>
+        <Association Name="FK_ExchangeRate_Currencies">
+          <End Type="BaseEntities.Currencies" Role="Currencies" Multiplicity="1" />
+          <End Type="BaseEntities.ExchangeRate" Role="ExchangeRate" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ExchangeRate_Dealers">
+          <End Type="BaseEntities.Dealer" Role="Dealer" Multiplicity="1" />
+          <End Type="BaseEntities.ExchangeRate" Role="ExchangeRate" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProductsAdditionalFeedback">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="Guid" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DealersProducts">
+          <Key>
+            <PropertyRef Name="dpID" />
+          </Key>
+          <Property Type="Int32" Name="dpID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="dp_dealerID" Nullable="false" />
+          <Property Type="Int32" Name="dp_prodID" Nullable="false" />
+          <Property Type="String" Name="dp_prodName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="dp_grID" Nullable="false" />
+          <Property Type="Int32" Name="dp_brandID" Nullable="false" />
+          <Property Type="String" Name="dp_unit" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="dp_ourpID" />
+          <Property Type="String" Name="dp_photoUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="dp_prodUrl" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="dp_guarantee" />
+          <Property Type="String" Name="dp_descr" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="dp_enable" Nullable="false" />
+          <Property Type="Boolean" Name="dp_delete" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="BaseEntitiesStoreContainer" CdmEntityContainer="ZamovStorage">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Category)">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.City)">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+              </EntityTypeMapping>
+            </EntitySetMapping>
+          <EntitySetMapping Name="Dealers">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Dealer)">
+              <MappingFragment StoreEntitySet="Dealers">
+                <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+                <ScalarProperty Name="LoadXml" ColumnName="LoadXml" />
+                <ScalarProperty Name="BannerEnabled" ColumnName="BannerEnabled" />
+                <ScalarProperty Name="Banner" ColumnName="Banner" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="OrderLifeTime" ColumnName="OrderLifeTime" />
+                <ScalarProperty Name="Card" ColumnName="Card" />
+                <ScalarProperty Name="Noncash" ColumnName="Noncash" />
+                <ScalarProperty Name="Cash" ColumnName="Cash" />
+                <ScalarProperty Name="TopDealerTill" ColumnName="TopDealerTill" />
+                <ScalarProperty Name="TopDealer" ColumnName="TopDealer" />
+                <ScalarProperty Name="HasDiscounts" ColumnName="HasDiscounts" />
+                <ScalarProperty Name="LogoType" ColumnName="LogoType" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LogoImage" ColumnName="LogoImage" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Group)">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="IndexNumber" ColumnName="IndexNumber" />
+                <ScalarProperty Name="OldId" ColumnName="OldId" />
+                <ScalarProperty Name="DisplayProductImages" ColumnName="DisplayProductImages" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Product)">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="OldId" ColumnName="OldId" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TopProduct" ColumnName="TopProduct" />
+                <ScalarProperty Name="New" ColumnName="New" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TranslationItemsTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.TranslationItemsType)">
+              <MappingFragment StoreEntitySet="TranslationItemsTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            </EntitySetMapping>
+          <EntitySetMapping Name="Translations">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Translation)">
+              <MappingFragment StoreEntitySet="Translations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="TranslationItemTypeId" ColumnName="TranslationItemTypeId" />
+                <ScalarProperty Name="Text" ColumnName="Translation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Products_Dealers" TypeName="BaseEntities.FK_Products_Dealers" StoreEntitySet="Products">
+            <EndProperty Name="Dealers">
+              <ScalarProperty Name="Id" ColumnName="DealerId" />
+            </EndProperty>
+            <EndProperty Name="Products">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Products_Groups" TypeName="BaseEntities.FK_Products_Groups" StoreEntitySet="Products">
+            <EndProperty Name="Groups">
+              <ScalarProperty Name="Id" ColumnName="GroupId" />
+            </EndProperty>
+            <EndProperty Name="Products">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="DealerCityMappings" TypeName="BaseEntities.DealerCityMappings" StoreEntitySet="DealerCityMappings">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="Id" ColumnName="CityId" />
+            </EndProperty>
+            <EndProperty Name="Dealers">
+              <ScalarProperty Name="Id" ColumnName="DealerId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProductCityMappings" TypeName="BaseEntities.ProductCityMappings" StoreEntitySet="ProductCityMappings">
+            <EndProperty Name="Cities">
+              <ScalarProperty Name="Id" ColumnName="CityId" />
+            </EndProperty>
+            <EndProperty Name="Products">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ProductImages">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.ProductImage)">
+              <MappingFragment StoreEntitySet="ProductImages">
+                <ScalarProperty Name="Default" ColumnName="Default" />
+                <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_ProductImages_Products" TypeName="BaseEntities.FK_ProductImages_Products" StoreEntitySet="ProductImages">
+            <EndProperty Name="ProductImages">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" /></EndProperty></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="DeleteTranslations" FunctionName="BaseEntities.Store.DeleteTranslations" />
+          <FunctionImportMapping FunctionImportName="UpdateTranslations" FunctionName="BaseEntities.Store.Translations_Update" />
+          <AssociationSetMapping Name="DealerCategoryMapping" TypeName="BaseEntities.DealerCategoryMapping" StoreEntitySet="DealerCategoryMapping">
+            <EndProperty Name="Dealer">
+              <ScalarProperty Name="Id" ColumnName="DealerId" /></EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Groups_Dealers" TypeName="BaseEntities.FK_Groups_Dealers" StoreEntitySet="Groups">
+            <EndProperty Name="Group">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Dealer">
+              <ScalarProperty Name="Id" ColumnName="DealerId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Categories_Categories" TypeName="BaseEntities.FK_Categories_Categories" StoreEntitySet="Categories">
+            <EndProperty Name="Category1">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" /></EndProperty>
+            <Condition ColumnName="CategoryId" IsNull="false" /></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="ProductImages_Cleanup" FunctionName="BaseEntities.Store.ProductImages_Cleanup" />
+          <FunctionImportMapping FunctionImportName="ProductManufacturer_Cleanup" FunctionName="BaseEntities.Store.ProductManufacturer_Cleanup" />
+          <FunctionImportMapping FunctionImportName="UpdateProducts" FunctionName="BaseEntities.Store.Products_Update" />
+          <AssociationSetMapping Name="FK_Groups_Groups" TypeName="BaseEntities.FK_Groups_Groups" StoreEntitySet="Groups">
+            <EndProperty Name="Group1">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Group">
+              <ScalarProperty Name="Id" ColumnName="GroupId" /></EndProperty>
+            <Condition ColumnName="GroupId" IsNull="false" /></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="InsertImportedProducts" FunctionName="BaseEntities.Store.Products_InsertImported" />
+          <FunctionImportMapping FunctionImportName="UpdateImportedProducts" FunctionName="BaseEntities.Store.Products_UpdateImported" />
+          <FunctionImportMapping FunctionImportName="GetGroupsPath" FunctionName="BaseEntities.Store.Groups_GetPaths" />
+          <EntitySetMapping Name="CategoryImages">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.CategoryImage)">
+              <MappingFragment StoreEntitySet="CategoryImages">
+                <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_CategoryImages_Categories" TypeName="BaseEntities.FK_CategoryImages_Categories" StoreEntitySet="CategoryImages">
+            <EndProperty Name="CategoryImages">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" /></EndProperty></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="GetCategories" FunctionName="BaseEntities.Store.Categories_GetByCityId" />
+          <FunctionImportMapping FunctionImportName="CategoryImages_Cleanup" FunctionName="BaseEntities.Store.CategoryImages_Cleanup" />
+          <EntitySetMapping Name="DealerFeedback">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.DealerFeedback)">
+              <MappingFragment StoreEntitySet="DealerFeedback">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_DealerFeedback_Dealers" TypeName="BaseEntities.FK_DealerFeedback_Dealers" StoreEntitySet="DealerFeedback">
+            <EndProperty Name="DealerFeedback">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Dealer">
+              <ScalarProperty Name="Id" ColumnName="DealerId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="MeassureUnits">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.MeassureUnit)">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="deleteDealer" FunctionName="BaseEntities.Store.deleteDealer" />
+          <FunctionImportMapping FunctionImportName="ExpireOrders" FunctionName="BaseEntities.Store.ExpireOrders" />
+          <AssociationSetMapping Name="FK_Groups_Categories" TypeName="BaseEntities.FK_Groups_Categories" StoreEntitySet="Groups">
+            <EndProperty Name="Group">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" /></EndProperty>
+            <Condition ColumnName="CategoryId" IsNull="false" /></AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="CopyDealer" FunctionName="BaseEntities.Store.CopyDealer" />
+          <EntitySetMapping Name="Manufacturer">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Manufacturer)">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="ManufacturerProductMapping" TypeName="BaseEntities.ManufacturerProductMapping" StoreEntitySet="ManufacturerProductMapping">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" /></EndProperty>
+            <EndProperty Name="Manufacturer">
+              <ScalarProperty Name="Id" ColumnName="ManufacturerId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Currencies)">
+              <MappingFragment StoreEntitySet="Currencies">
+                <ScalarProperty Name="Sign" ColumnName="Sign" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DealerCurrencyRates">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.DealerCurrencyRates)">
+              <MappingFragment StoreEntitySet="DealerCurrencyRates">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+                <ScalarProperty Name="DealerId" ColumnName="DealerId" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_DealerCurrencyRates_Currency" TypeName="BaseEntities.FK_DealerCurrencyRates_Currency" StoreEntitySet="DealerCurrencyRates">
+            <EndProperty Name="DealerCurrencyRates">
+              <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+              <ScalarProperty Name="DealerId" ColumnName="DealerId" /></EndProperty>
+            <EndProperty Name="Currencies">
+              <ScalarProperty Name="Id" ColumnName="CurrencyId" /></EndProperty></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Products_Currency" TypeName="BaseEntities.FK_Products_Currency" StoreEntitySet="Products">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Currencies">
+              <ScalarProperty Name="Id" ColumnName="CurrencyId" /></EndProperty>
+            <Condition ColumnName="CurrencyId" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DealerCurrencyRates_Dealer" TypeName="BaseEntities.FK_DealerCurrencyRates_Dealer" StoreEntitySet="DealerCurrencyRates">
+            <EndProperty Name="DealerCurrencyRates">
+              <ScalarProperty Name="CurrencyId" ColumnName="CurrencyId" />
+              <ScalarProperty Name="DealerId" ColumnName="DealerId" /></EndProperty>
+            <EndProperty Name="Dealer">
+              <ScalarProperty Name="Id" ColumnName="DealerId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="DealerContacts">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.DealerContacts)">
+              <MappingFragment StoreEntitySet="DealerContacts">
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ContactType" ColumnName="ContactType" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_DealerContacts_Dealers" TypeName="BaseEntities.FK_DealerContacts_Dealers" StoreEntitySet="DealerContacts">
+            <EndProperty Name="DealerContacts">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <EndProperty Name="Dealer">
+              <ScalarProperty Name="Id" ColumnName="DealerId" /></EndProperty></AssociationSetMapping>
+          <EntitySetMapping Name="Advert">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Advert)">
+              <MappingFragment StoreEntitySet="Advert">
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ImageSource" ColumnName="ImageSource" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Id" ColumnName="Id" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="AdvertCategory" TypeName="BaseEntities.AdvertCategory" StoreEntitySet="Advert">
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" /></EndProperty>
+            <EndProperty Name="Advert">
+              <ScalarProperty Name="Id" ColumnName="Id" /></EndProperty>
+            <Condition ColumnName="CategoryId" IsNull="false" /></AssociationSetMapping>
+          <EntitySetMapping Name="GroupsAdditional">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.GroupsAdditional)">
+              <MappingFragment StoreEntitySet="GroupsAdditional">
+                <ScalarProperty Name="gr_IndexNumber" ColumnName="gr_IndexNumber" />
+                <ScalarProperty Name="gr_dateBeg" ColumnName="gr_dateBeg" />
+                <ScalarProperty Name="gr_displayProductImages" ColumnName="gr_displayProductImages" />
+                <ScalarProperty Name="gr_deleted" ColumnName="gr_deleted" />
+                <ScalarProperty Name="gr_enabled" ColumnName="gr_enabled" />
+                <ScalarProperty Name="gr_Name" ColumnName="gr_Name" />
+                <ScalarProperty Name="grID" ColumnName="grID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_GroupsAdditional_Categories" TypeName="BaseEntities.FK_GroupsAdditional_Categories" StoreEntitySet="GroupsAdditional">
+            <EndProperty Name="GroupsAdditional">
+              <ScalarProperty Name="grID" ColumnName="grID" /></EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="gr_CatID" /></EndProperty>
+            <Condition ColumnName="gr_CatID" IsNull="false" /></AssociationSetMapping>
+          <AssociationSetMapping Name="FK_GroupsAdditional_GroupsAdditional" TypeName="BaseEntities.FK_GroupsAdditional_GroupsAdditional" StoreEntitySet="GroupsAdditional">
+            <EndProperty Name="GroupsAdditional1">
+              <ScalarProperty Name="grID" ColumnName="grID" /></EndProperty>
+            <EndProperty Name="GroupsAdditional">
+              <ScalarProperty Name="grID" ColumnName="gr_ParID" /></EndProperty>
+            <Condition ColumnName="gr_ParID" IsNull="false" /></AssociationSetMapping>
+          <EntitySetMapping Name="ProductsAdditional">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.ProductsAdditional)">
+              <MappingFragment StoreEntitySet="ProductsAdditional">
+                <ScalarProperty Name="p_photo_url" ColumnName="p_photo_url" />
+                <ScalarProperty Name="p_brandID" ColumnName="p_brandID" />
+                <ScalarProperty Name="p_descr" ColumnName="p_descr" />
+                <ScalarProperty Name="p_action" ColumnName="p_action" />
+                <ScalarProperty Name="p_top" ColumnName="p_top" />
+                <ScalarProperty Name="p_new" ColumnName="p_new" />
+                <ScalarProperty Name="p_deleted" ColumnName="p_deleted" />
+                <ScalarProperty Name="p_enabled" ColumnName="p_enabled" />
+                <ScalarProperty Name="p_unit" ColumnName="p_unit" />
+                <ScalarProperty Name="p_prodName" ColumnName="p_prodName" />
+                <ScalarProperty Name="p_partNum" ColumnName="p_partNum" />
+                <ScalarProperty Name="p_prodID" ColumnName="p_prodID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="FK_ProductsAdditional_GroupsAdditional" TypeName="BaseEntities.FK_ProductsAdditional_GroupsAdditional" StoreEntitySet="ProductsAdditional">
+            <EndProperty Name="ProductsAdditional">
+              <ScalarProperty Name="p_prodID" ColumnName="p_prodID" /></EndProperty>
+            <EndProperty Name="GroupsAdditional">
+              <ScalarProperty Name="grID" ColumnName="p_grID" /></EndProperty>
+            <Condition ColumnName="p_grID" IsNull="false" /></AssociationSetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="IsTypeOf(BaseEntities.Brands)">
+              <MappingFragment StoreEntitySet="Brands">
+                <ScalarProperty Name="brandName" ColumnName="brandName" />
+                <ScalarProperty Name="brandID" ColumnName="brandID" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="DealersGroups">
+            <EntityTypeMapping TypeName="BaseEntities.DealersGroups">
+              <MappingFragment StoreEntitySet="DealersGroups">
+                <ScalarProperty Name="dg_dgrName" ColumnName="dg_dgrName" />
+                <ScalarProperty Name="dg_parGrID" ColumnName="dg_parGrID" />
+                <ScalarProperty Name="dg_dgrID" ColumnName="dg_dgrID" />
+                <ScalarProperty Name="dg_dealerID" ColumnName="dg_dealerID" />
+                <ScalarProperty Name="dgID" ColumnName="dgID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_DealersGroups_GroupsAdditional" TypeName="BaseEntities.FK_DealersGroups_GroupsAdditional" StoreEntitySet="DealersGroups">
+            <EndProperty Name="DealersGroups">
+              <ScalarProperty Name="dgID" ColumnName="dgID" />
+            </EndProperty>
+            <EndProperty Name="GroupsAdditional">
+              <ScalarProperty Name="grID" ColumnName="dg_ourgrID" />
+            </EndProperty>
+            <Condition ColumnName="dg_ourgrID" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ExchangeRate">
+            <EntityTypeMapping TypeName="BaseEntities.ExchangeRate">
+              <MappingFragment StoreEntitySet="ExchangeRate">
+                <ScalarProperty Name="xr_dateBeg" ColumnName="xr_dateBeg" />
+                <ScalarProperty Name="xr_value" ColumnName="xr_value" />
+                <ScalarProperty Name="xrID" ColumnName="xrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_ExchangeRate_Currencies" TypeName="BaseEntities.FK_ExchangeRate_Currencies" StoreEntitySet="ExchangeRate">
+            <EndProperty Name="ExchangeRate">
+              <ScalarProperty Name="xrID" ColumnName="xrID" />
+            </EndProperty>
+            <EndProperty Name="Currencies">
+              <ScalarProperty Name="Id" ColumnName="xr_curID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ExchangeRate_Dealers" TypeName="BaseEntities.FK_ExchangeRate_Dealers" StoreEntitySet="ExchangeRate">
+            <EndProperty Name="ExchangeRate">
+              <ScalarProperty Name="xrID" ColumnName="xrID" />
+            </EndProperty>
+            <EndProperty Name="Dealer">
+              <ScalarProperty Name="Id" ColumnName="xr_dealerID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ProductsAdditionalFeedback">
+            <EntityTypeMapping TypeName="BaseEntities.ProductsAdditionalFeedback">
+              <MappingFragment StoreEntitySet="ProductsAdditionalFeedback">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UpdateProductsAdditional" FunctionName="BaseEntities.Store.ProductsAdditional_Update" />
+          <EntitySetMapping Name="DealersProducts">
+            <EntityTypeMapping TypeName="BaseEntities.DealersProducts">
+              <MappingFragment StoreEntitySet="DealersProducts">
+                <ScalarProperty Name="dp_delete" ColumnName="dp_delete" />
+                <ScalarProperty Name="dp_enable" ColumnName="dp_enable" />
+                <ScalarProperty Name="dp_descr" ColumnName="dp_descr" />
+                <ScalarProperty Name="dp_guarantee" ColumnName="dp_guarantee" />
+                <ScalarProperty Name="dp_prodUrl" ColumnName="dp_prodUrl" />
+                <ScalarProperty Name="dp_photoUrl" ColumnName="dp_photoUrl" />
+                <ScalarProperty Name="dp_ourpID" ColumnName="dp_ourpID" />
+                <ScalarProperty Name="dp_unit" ColumnName="dp_unit" />
+                <ScalarProperty Name="dp_brandID" ColumnName="dp_brandID" />
+                <ScalarProperty Name="dp_grID" ColumnName="dp_grID" />
+                <ScalarProperty Name="dp_prodName" ColumnName="dp_prodName" />
+                <ScalarProperty Name="dp_prodID" ColumnName="dp_prodID" />
+                <ScalarProperty Name="dp_dealerID" ColumnName="dp_dealerID" />
+                <ScalarProperty Name="dpID" ColumnName="dpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Structure" ShowGrid="false" DisplayType="false" ZoomLevel="93">
+        <EntityTypeShape EntityType="BaseEntities.Category" Width="1.5" PointX="5.125" PointY="1.75" Height="2.085348307291667" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.City" Width="1.5" PointX="0.75" PointY="1.125" Height="1.7566536458333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.Dealer" PointX="9.625" PointY="0.5" Width="1.5" Height="4.2879036458333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.Group" Width="1.5" PointX="3.125" PointY="1.5" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.Product" Width="1.5" PointX="0.75" PointY="3.75" Height="2.5783902994791665" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.TranslationItemsType" Width="1.5" PointX="11.25" PointY="2.875" Height="1.4033821614583331" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseEntities.Translation" Width="1.5" PointX="11.25" PointY="0.5" Height="1.7566536458333335" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="BaseEntities.FK_Products_Dealers">
+          <ConnectorPoint PointX="9.625" PointY="0.49999999999999989" />
+          <ConnectorPoint PointX="9.25" PointY="0.12499999999999956" />
+          <ConnectorPoint PointX="2.625" PointY="0.12499999999999956" />
+          <ConnectorPoint PointX="2.625" PointY="3.375" />
+          <ConnectorPoint PointX="2.25" PointY="3.75" />
+          </AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_Products_Groups" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.125" PointY="4.1920475260416659" />
+          <ConnectorPoint PointX="2.25" PointY="4.1920475260416659" />
+          </AssociationConnector>
+        <AssociationConnector ManuallyRouted="false" Association="BaseEntities.DealerCityMappings">
+          <ConnectorPoint PointX="2.25" PointY="1.28125" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="1.2812499999999993" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="1.28125" />
+          <ConnectorPoint PointX="9.625" PointY="1.28125" />
+          </AssociationConnector>
+        <AssociationConnector Association="BaseEntities.ProductCityMappings" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="3.1052864583333331" />
+          <ConnectorPoint PointX="1.5" PointY="3.75" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.ProductImage" Width="1.5" PointX="5.125" PointY="4.5" Height="1.7566536458333335" />
+        <AssociationConnector Association="BaseEntities.FK_ProductImages_Products" >
+          <ConnectorPoint PointX="2.25" PointY="6.2230843098958326" />
+          <ConnectorPoint PointX="5.125" PointY="6.2230843098958326" />
+          </AssociationConnector>
+        <AssociationConnector Association="BaseEntities.DealerCategoryMapping" >
+          <ConnectorPoint PointX="6.625" PointY="1.96875" />
+          <ConnectorPoint PointX="9.625" PointY="1.96875" /></AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_Groups_Dealers" >
+          <ConnectorPoint PointX="9.625" PointY="1.5937499999999998" />
+          <ConnectorPoint PointX="4.625" PointY="1.5937499999999998" />
+          </AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_Categories_Categories" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.364583333333333" PointY="4.6917936197916674" />
+          <ConnectorPoint PointX="6.364583333333333" PointY="4.9661810256649694" />
+          <ConnectorPoint PointX="5.40625" PointY="4.9661810256649694" />
+          <ConnectorPoint PointX="5.40625" PointY="4.6917936197916674" /></AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_Groups_Groups" >
+          <ConnectorPoint PointX="3.6569230769230767" PointY="4.2427376302083326" />
+          <ConnectorPoint PointX="3.6569230769230767" PointY="4.4927376302083326" />
+          <ConnectorPoint PointX="4.1034615384615378" PointY="4.4927376302083326" />
+          <ConnectorPoint PointX="4.1034615384615378" PointY="4.2427376302083326" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.CategoryImage" Width="1.875" PointX="7.25" PointY="2.25" Height="1.5923063151041665" />
+        <AssociationConnector Association="BaseEntities.FK_CategoryImages_Categories" >
+          <ConnectorPoint PointX="6.625" PointY="3.1494559811553953" />
+          <ConnectorPoint PointX="6.916666666666667" PointY="3.1494559811553948" />
+          <ConnectorPoint PointX="7.083333333333333" PointY="3.1494559811553953" />
+          <ConnectorPoint PointX="7.25" PointY="3.1494559811553953" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.DealerFeedback" Width="1.875" PointX="7.5" PointY="4.375" Height="1.592306315104167" />
+        <AssociationConnector Association="BaseEntities.FK_DealerFeedback_Dealers" >
+          <ConnectorPoint PointX="9.625" PointY="5.1583561197916667" />
+          <ConnectorPoint PointX="9.375" PointY="5.1583561197916667" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.MeassureUnit" Width="1.5" PointX="3.25" PointY="4.5" Height="1.4033821614583326" />
+        <AssociationConnector Association="BaseEntities.FK_Groups_Categories" >
+          <ConnectorPoint PointX="5.125" PointY="3.09375" />
+          <ConnectorPoint PointX="4.625" PointY="3.09375" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.Manufacturer" Width="1.5" PointX="3.375" PointY="7.875" Height="1.4279589843749996" />
+        <AssociationConnector Association="BaseEntities.ManufacturerProductMapping" >
+          <ConnectorPoint PointX="3.375" PointY="8.4252023229166664" />
+          <ConnectorPoint PointX="0.84375" PointY="8.4252023229166664" />
+          <ConnectorPoint PointX="0.84375" PointY="8.0379036458333335" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.Currencies" Width="1.5" PointX="11.75" PointY="5.375" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="BaseEntities.DealerCurrencyRates" Width="1.5" PointX="13.5" PointY="0.875" Height="1.9802864583333331" />
+        <AssociationConnector Association="BaseEntities.FK_DealerCurrencyRates_Currency" >
+          <ConnectorPoint PointX="13.03125" PointY="5.375" />
+          <ConnectorPoint PointX="13.03125" PointY="2.7503092708333337" />
+          <ConnectorPoint PointX="13.5" PointY="2.7503092708333337" /></AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_Products_Currency" >
+          <ConnectorPoint PointX="11.75" PointY="6.9901432291666667" />
+          <ConnectorPoint PointX="7.083333333333333" PointY="6.9901432291666659" />
+          <ConnectorPoint PointX="6.916666666666667" PointY="6.9901432291666667" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="6.9901432291666659" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="6.9901432291666667" />
+          <ConnectorPoint PointX="2.25" PointY="6.9901432291666667" />
+          </AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_DealerCurrencyRates_Dealer" >
+          <ConnectorPoint PointX="11.125" PointY="2.5828270833333331" />
+          <ConnectorPoint PointX="13.5" PointY="2.5828270833333331" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.DealerContacts" Width="1.5" PointX="13.5" PointY="3.25" Height="1.7879850260416674" />
+        <AssociationConnector Association="BaseEntities.FK_DealerContacts_Dealers" >
+          <ConnectorPoint PointX="11.125" PointY="4.7855843098958335" />
+          <ConnectorPoint PointX="12.947916666666666" PointY="4.7855843098958326" />
+          <ConnectorPoint PointX="13.114583333333334" PointY="4.7855843098958335" />
+          <ConnectorPoint PointX="13.5" PointY="4.7855843098958335" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.Advert" Width="1.5" PointX="5.375" PointY="7.75" Height="1.9802864583333317" />
+        <AssociationConnector Association="BaseEntities.AdvertCategory">
+          <ConnectorPoint PointX="6.125" PointY="7.75" />
+          <ConnectorPoint PointX="6.125" PointY="6.7302864583333335" />
+          <ConnectorPoint PointX="6.875" PointY="6.7302864583333335" />
+          <ConnectorPoint PointX="6.875" PointY="3.9755864241195216" />
+          <ConnectorPoint PointX="6.625" PointY="3.9755864241195216" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.GroupsAdditional" Width="1.75" PointX="7.25" PointY="7.625" Height="2.9417936197916656" />
+        <AssociationConnector Association="BaseEntities.FK_GroupsAdditional_Categories" >
+          <ConnectorPoint PointX="6.625" PointY="4.8840950520833326" />
+          <ConnectorPoint PointX="6.8160744349011217" PointY="5.0751694869844535" />
+          <ConnectorPoint PointX="6.9339255650988791" PointY="5.1930206171822118" />
+          <ConnectorPoint PointX="7" PointY="5.2590950520833326" />
+          <ConnectorPoint PointX="7" PointY="7.25" />
+          <ConnectorPoint PointX="6.875" PointY="7.25" />
+          <ConnectorPoint PointX="7.25" PointY="7.625" /></AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_GroupsAdditional_GroupsAdditional" >
+          <ConnectorPoint PointX="7.8705769230769231" PointY="10.759095052083334" />
+          <ConnectorPoint PointX="7.8705769230769231" PointY="11.009095052083332" />
+          <ConnectorPoint PointX="8.3915384615384614" PointY="11.009095052083332" />
+          <ConnectorPoint PointX="8.3915384615384614" PointY="10.759095052083334" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.ProductsAdditional" Width="1.5" PointX="11" PointY="8" Height="3.5186979166666674" />
+        <AssociationConnector Association="BaseEntities.FK_ProductsAdditional_GroupsAdditional" >
+          <ConnectorPoint PointX="9" PointY="10.184591471354167" />
+          <ConnectorPoint PointX="11" PointY="10.184591471354167" /></AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.Brands" Width="1.5" PointX="1" PointY="8.875" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="BaseEntities.DealersGroups" Width="1.5" PointX="9.375" PointY="7.375" Height="2.1725878906250031" />
+        <AssociationConnector Association="BaseEntities.FK_DealersGroups_GroupsAdditional" >
+          <ConnectorPoint PointX="9" PointY="8.5862939453125016" />
+          <ConnectorPoint PointX="9.375" PointY="8.5862939453125016" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.ExchangeRate" Width="1.5" PointX="13.625" PointY="5.625" Height="1.9802864583333388" />
+        <AssociationConnector Association="BaseEntities.FK_ExchangeRate_Currencies" >
+          <ConnectorPoint PointX="13.25" PointY="6.09375" />
+          <ConnectorPoint PointX="13.625" PointY="6.09375" />
+        </AssociationConnector>
+        <AssociationConnector Association="BaseEntities.FK_ExchangeRate_Dealers" >
+          <ConnectorPoint PointX="11.125" PointY="3.6848160872395832" />
+          <ConnectorPoint PointX="11.1875" PointY="3.6848160872395832" />
+          <ConnectorPoint PointX="11.1875" PointY="5.2927864583333335" />
+          <ConnectorPoint PointX="14.375" PointY="5.2927864583333335" />
+          <ConnectorPoint PointX="14.375" PointY="5.625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="BaseEntities.ProductsAdditionalFeedback" Width="2.125" PointX="12.625" PointY="8" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="BaseEntities.DealersProducts" Width="1.5" PointX="15.375" PointY="5.375" Height="3.7109993489583246" />
+        </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

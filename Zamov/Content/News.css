@@ -1,0 +1,12 @@
+﻿.newsContainer{}
+.newsContainer div.item{background:transparent url(img/newsSplitter.jpg) no-repeat center 100%}
+.newsContainer div.item div.title, .newsDetail div.title{color:#2B587A; padding-bottom:10px; font-weight:bold;}
+.newsContainer div.item div.itemFooter{text-align:right; padding-bottom:2px;}
+.newsContainer div.item div.itemFooter a{color:#2B587A; text-decoration:none;}
+.newsContainer div.item div.itemFooter a:hover{text-decoration:underline;}
+
+.newsDetail{padding:20px;}
+
+/*#leftSide{border:none !important;}*/
+
+.newsDate{color:#898989; font-size:10px;}

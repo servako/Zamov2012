@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Zamov.Helpers" %>
+<%@ Import Namespace="Microsoft.Web.Mvc" %>
+<asp:Content runat="server" ContentPlaceHolderID="leftMenu">
+<%
+    List<SelectListItem> items = new List<SelectListItem>();
+    SelectListItem orders = new SelectListItem { Text = Html.ResourceString("Orders"), Value = VirtualPathUtility.ToAbsolute("~/UserCabinet") };
+    SelectListItem details = new SelectListItem { Text = Html.ResourceString("YourDetails"), Value = VirtualPathUtility.ToAbsolute("~/UserCabinet/UserDetails") };
+    items.Add(orders);
+    items.Add(details);
+    Html.RenderAction<Zamov.Controllers.PagePartsController>(ac => ac.LeftMenu(Html.ResourceString("UserCabinet"), items));         
+%>
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="mainContent">
+    <asp:ContentPlaceHolder runat="server" ID="mainContent"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content runat="server" ContentPlaceHolderID="includes">
+    <asp:ContentPlaceHolder runat="server" ID="includes"></asp:ContentPlaceHolder>
+</asp:Content>

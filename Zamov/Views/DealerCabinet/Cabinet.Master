@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Microsoft.Web.Mvc" %>
+<%@ Import Namespace="Zamov.Helpers" %>
+<asp:Content ContentPlaceHolderID="leftMenu" runat="server">
+    <%
+        List<SelectListItem> items = new List<SelectListItem>();
+        SelectListItem dealerCurrencyRates = new SelectListItem { Text = Html.ResourceString("CurrencyRates"), Value = VirtualPathUtility.ToAbsolute("~/DealerCabinet/CurrencyRates") };
+        SelectListItem dealerInfo = new SelectListItem { Text = Html.ResourceString("EditDealer"), Value = VirtualPathUtility.ToAbsolute("~/DealerCabinet/AddUpdateDealer") };
+        SelectListItem payment = new SelectListItem { Text = Html.ResourceString("Payment"), Value = "javascript:openPaymentDetails()" };
+        SelectListItem delivery = new SelectListItem { Text = Html.ResourceString("Delivery"), Value = "javascript:openDeliveryDetails()" };
+        SelectListItem cities = new SelectListItem { Text = Html.ResourceString("Cities"), Value = "javascript:openCityMappings()" };
+        //SelectListItem categories = new SelectListItem { Text = Html.ResourceString("Categories"), Value = "javascript:openCategoryMappings()" };
+        SelectListItem groups = new SelectListItem { Text = Html.ResourceString("Groups"), Value = VirtualPathUtility.ToAbsolute("~/DealerCabinet/Groups") };
+        SelectListItem products = new SelectListItem { Text = Html.ResourceString("Products"), Value = VirtualPathUtility.ToAbsolute("~/DealerCabinet/Products") };
+        SelectListItem orders = new SelectListItem { Text = Html.ResourceString("Orders"), Value = VirtualPathUtility.ToAbsolute("~/DealerCabinet/Orders") };
+        items.Add(dealerInfo);
+        items.Add(payment);
+        items.Add(delivery);
+        items.Add(cities);
+        //items.Add(categories);
+        items.Add(groups);
+        items.Add(products);
+        items.Add(orders);
+        items.Add(dealerCurrencyRates);
+        using (Zamov.Models.ZamovStorage context = new Zamov.Models.ZamovStorage())
+        {
+            bool isUploadXml = false;
+
+            if (Roles.IsUserInRole(Profile.UserName, "Administrators")) isUploadXml = true;
+
+            Zamov.Models.Dealer currentDealer = context.Dealers.Select(d => d).Where(d => d.Id == Profile.DealerId).FirstOrDefault();
+            if (currentDealer != null && currentDealer.LoadXml)
+            {
+                isUploadXml = true;
+            }
+
+            if (isUploadXml)
+            {
+				SelectListItem productsAdditional = new SelectListItem { Text = Html.ResourceString("ProductsAdditional"), Value = VirtualPathUtility.ToAbsolute("~/DealerCabinet/ProductsAdditional") };
+				items.Add(productsAdditional);
+            }
+        }
+        Html.RenderAction<Zamov.Controllers.PagePartsController>(ac => ac.LeftMenu(Html.ResourceString("PersonalCabinet"), items)); 
+    %>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="mainContent" runat="server">
+    <%= Html.FrameWindow("CityMappings", "/DealerCabinet/DealerCityMappings")%>
+    <%= Html.FrameWindow("CategoryMappings", "/DealerCabinet/DealerCategoryMappings")%>
+    <%= Html.FrameWindow("DeliveryDetails", "/DealerCabinet/DeliveryInfo")%>
+    <%= Html.FrameWindow("PaymentDetails", "/DealerCabinet/PaymentDetails")%>
+    
+    <div id="PaymentDetails"></div>
+    <div id="CityMappings"></div>
+    <div id="CategoryMappings"></div>
+    <div id="DeliveryDetails"></div>
+    <%if (Roles.IsUserInRole("Administrators"))
+      {
+          Html.RenderPartial("SelectDealer");
+      }
+    %>
+    <center>
+    <table style="width:80%">
+        <tr>
+            <td align="left" valign="top"><%= Html.Image("~/Image/ShowLogo/" + Zamov.Controllers.SystemSettings.CurrentDealer)%></td>
+            <td align="right" valign="top"><%= Html.ResourceString("Manager") + ": " +  Profile.FirstName + " " + Profile.LastName %></td>
+        </tr>
+    </table>
+    </center>
+    <asp:ContentPlaceHolder ID="mainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="includes" runat="server">
+    <%= Html.RegisterCss("~/Content/Admin.css") %>
+    <%= Html.RegisterCss("~/Content/redmond/jquery.ui.css")%>
+    <%= Html.RegisterJS("jquery.ui.js")%>
+    <%= Html.RegisterCss("~/Content/DealerCabinet.css")%>
+    <asp:ContentPlaceHolder runat="server" ID="includes">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="bodyTop">
+    <asp:ContentPlaceHolder runat="server" ID="bodyTop"></asp:ContentPlaceHolder>
+</asp:Content>

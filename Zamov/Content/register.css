@@ -1,0 +1,7 @@
+﻿.registrationTable{margin:10px;}
+.registrationTable tr td:first-child{width:200px !important;}
+.registrationTable tr td input{width:150px;}
+.registrationTable tr td textarea{width:150px; height:100px;}
+.captchaTable{width:400px;}
+.captchaTable tr td{ padding:10px;}
+#leftSide{border:none !important;}
